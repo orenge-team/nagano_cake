@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+<<<<<<< HEAD
+=======
+  root to: 'homes#top'
+  get "homes/about" => "homes#about", as: "about"
+  
+>>>>>>> a936c0ff7c4f794e0893bb8e5b787e7ee436ac53
   devise_for :admins, controllers:{
     sessions:     'admins/sessions',
     passwords:    'admins/passwords',
