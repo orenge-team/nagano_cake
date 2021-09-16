@@ -1,22 +1,38 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <script src="https://kit.fontawesome.com/10a14675a6.js" crossorigin="anonymous"></script>
     <title>NaganoCake</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <% if admin_signed_in? %>
-      <%= link_to "ログアウト", destroy_admin_session_path, method: :delete %>
-    <% else %>
-      <%= link_to "ログイン", new_admin_session_path %>
-    <% end %>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+       <div class="container">
+        <a class="navbar-brand" href="/"><span>ながのCAKE</span></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ml-auto">
 
+              <% if admin_signed_in? %>
+                <%= link_to "ログアウト", destroy_admin_session_path, method: :delete %>
+              <% else %>
+                <%= link_to "ログイン", new_admin_session_path %>
+              <% end %>
+
+
+
+            </ul>
+          </div>
+       </div>
+    </header>
 
     <%= yield %>
-  </body>
-</html>
