@@ -7,18 +7,11 @@ Rails.application.routes.draw do
     sessions:     'admins/sessions',
     passwords:    'admins/passwords',
     registrations: 'admins/registrations'
-    
+  }
 
-  
-  
   devise_for :customers
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-
-
-   resources :order, only: [:new, :create, :index, :show]
-   post 'order/confirm' => 'orders#confirm'
-   get 'order/thanks' => 'orders#thanks'
    
   scope module: :public do
    resources :addresses, except:  [:new]
