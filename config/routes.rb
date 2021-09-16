@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   root to: 'homes#top'
   get "homes/about" => "homes#about", as: "about"
 
-  devise_for :admins, controllers:{
+  devise_for :admin, controllers:{
+
+
     sessions:     'admins/sessions'
   }
 
@@ -22,6 +24,10 @@ Rails.application.routes.draw do
     get '/' => 'homes#top'
   end
 
-
+   scope module: :public do
+    resource :customer, only: [:show, :edit, :update]
+    get "customer/unsubscribe" => "customer#unsubscribe"
+    patch "customer/withdraw" => "customer#withdraw"
+   end
 
 end
