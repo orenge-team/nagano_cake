@@ -7,15 +7,10 @@ Rails.application.routes.draw do
     sessions:     'admins/sessions',
     passwords:    'admins/passwords',
     registrations: 'admins/registrations'
+    
 
   
-  devise_for :admin, controllers:{
-
-
-    sessions:     'admins/sessions'
-
-  }
-
+  
   devise_for :customers
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
