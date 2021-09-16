@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-
   root to: 'homes#top'
   get "homes/about" => "homes#about", as: "about"
 
@@ -21,10 +20,18 @@ Rails.application.routes.draw do
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
+
+   resources :order, only: [:new, :create, :index, :show]
+   post 'order/confirm' => 'orders#confirm'
+   get 'order/thanks' => 'orders#thanks'
+   
   scope module: :public do
+   resources :addresses, except:  [:new]
+    
    resources :orders, only: [:new, :create, :index, :show]
    post 'orders/confirm' => 'orders#confirm'
    get 'orders/thanks' => 'orders#thanks'
+
  end
 
   namespace :admin do
