@@ -27,13 +27,25 @@
               <% else %>
                 <%= link_to "ログイン", new_admin_session_path %>
               <% end %>
-              
-              
-              
+
+
+
             </ul>
           </div>
        </div>
     </header>
     <%= yield %>
+
+
+    <footer>
+      <div class="container mt-5">
+       <div class="row">
+        <div class="mx-auto">
+         <p>CopyRight naagnocake.inc</p>
+        </div>
+       </div>
+      </div>
+    </footer>
+
   </body>
 </html>
