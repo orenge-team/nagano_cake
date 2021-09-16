@@ -17,8 +17,9 @@ Rails.application.routes.draw do
    post 'order/confirm' => 'orders#confirm'
    get 'order/thanks' => 'orders#thanks'
    
+  scope module: :public do
    resources :addresses, except:  [:new]
-   
+ end
 
   namespace :admin do
     get '/' => 'homes#top'
