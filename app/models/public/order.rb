@@ -1,3 +1,5 @@
 class Public::Order < ApplicationRecord
-  has_many :public_customers, dependent: :destroy
+  belongs_to :public_customers, dependent: :destroy
+  
+  enum payment_method:{"クレジットカード": 0, "銀行振込": 1}
 end
