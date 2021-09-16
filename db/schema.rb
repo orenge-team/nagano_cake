@@ -10,7 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_16_062654) do
+
+
+ActiveRecord::Schema.define(version: 2021_09_16_090921) do
+
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -36,6 +39,7 @@ ActiveRecord::Schema.define(version: 2021_09_16_062654) do
     t.index ["reset_password_token"], name: "index_customers_on_reset_password_token", unique: true
   end
 
+
   create_table "items", force: :cascade do |t|
     t.string "name"
     t.string "image_id"
@@ -44,15 +48,43 @@ ActiveRecord::Schema.define(version: 2021_09_16_062654) do
     t.boolean "is_active", default: true, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+
+
+  create_table "public_customers", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "first_name"
+    t.string "last_name"
+    t.string "first_name_kana"
+    t.string "last_name_kana"
+    t.string "email"
+    t.string "postal_code"
+    t.string "adress"
+    t.string "phone_number"
+    t.boolean "is_deleted", default: true, null: false
   end
 
   create_table "public_orders", force: :cascade do |t|
+
+
+  create_table "public_addresses", force: :cascade do |t|
+
     t.string "name"
     t.string "postal_code"
     t.string "address"
-    t.integer "total_price"
-    t.integer "delivery_fee"
-    t.integer "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+
+  create_table "public_orders", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "postal_code", null: false
+    t.string "address", null: false
+    t.integer "total_price", null: false
+    t.integer "delivery_fee", null: false
+    t.integer "payment_method", default: 0, null: false
+    t.integer "status", default: 0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
