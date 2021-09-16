@@ -1,16 +1,9 @@
 Rails.application.routes.draw do
 
-
-  get 'genres/index'
-  get 'genres/create'
-  get 'genres/edit'
-  get 'genres/update'
   root to: 'homes#top'
   get "homes/about" => "homes#about", as: "about"
 
   devise_for :admin, controllers:{
-
-
     sessions:     'admins/sessions'
   }
 
@@ -26,7 +19,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     get '/' => 'homes#top'
-    resources :genres, only: [:index, :create, :edit, :update]
+    resources :genres, only:[:index, :create, :edit, :update]
   end
 
 
