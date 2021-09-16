@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
+    
+    
 
   root to: 'homes#top'
   get "homes/about" => "homes#about", as: "about"
+  
+  resource :customers, only: [:show, :edit, ]
   
   devise_for :admins, controllers:{
     sessions:     'admins/sessions',
