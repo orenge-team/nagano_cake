@@ -13,9 +13,9 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   namespace :public do
-   resources :order, only: [:new, :create, :index, :show]
-   post 'order/confirm' => 'orders#confirm'
-   get 'order/thanks' => 'orders#thanks'
+   resources :orders, only: [:new, :create, :index, :show]
+   post 'orders/confirm' => 'orders#confirm'
+   get 'orders/thanks' => 'orders#thanks'
  end
 
   namespace :admin do
