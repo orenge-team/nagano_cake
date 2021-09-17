@@ -8,7 +8,7 @@
             <th></th>
             <th>登録情報</th>
             <th></th>
-            <th><%= link_to "編集する", edit_customer_path, class: "btn btn-sm btn-success text-white"  %></th>
+            <th><%= link_to "編集する", edit_customers_path, class: "btn btn-sm btn-success text-white"  %></th>
           </tr>
         </table>
       </thead>
@@ -17,11 +17,11 @@
         <tbody>
           <tr>
             <td>氏名</td>
-            <td><%= @customer %><%= @cu%></td>
+            <td><%= @customer.first_name %><%= @customer.last_name %></td>
           </tr>
           <tr>
             <td>カナ</td>
-            <td></td>
+            <td><%= @customer.first_name %><%= @customer.last_name %></td>
           </tr>
           <tr>
             <td>郵便番号</td>
