@@ -4,6 +4,13 @@ class Public::OrdersController < ApplicationController
     # カート内商品、配送先が作成されてから記述
     @order = Public::Order.new
   end
+  
+  def show
+  
+  end
+
+  def thanks
+  end
 
   private
 
