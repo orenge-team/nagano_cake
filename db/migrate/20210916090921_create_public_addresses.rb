@@ -4,8 +4,8 @@ class CreatePublicAddresses < ActiveRecord::Migration[5.2]
       t.string :name
       t.string :postal_code
       t.string :address
-      t.datetime :created_at, default:now
-      t.datetime :updated_at, default:now
+      
+      
 
       t.timestamps
     end
