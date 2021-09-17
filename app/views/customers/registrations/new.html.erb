@@ -2,6 +2,10 @@
 
 <%= form_with model: @customers, url: customer_registration_path, local: true do |f| %>
   <%= render "customers/shared/error_messages", resource: resource %>
+  
+  <div class="field">
+    <%= f.label : %>
+  </div>
 
   <div class="field">
     <%= f.label :email %><br />
