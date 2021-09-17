@@ -15,10 +15,19 @@ Rails.application.routes.draw do
 
   scope module: :public do
    resources :addresses, except:  [:new]
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+   
+=======
+>>>>>>> 2f611e3b2bcd07185ae9d0400d874890db885211
 
    resources :orders, only: [:new, :create, :index, :show]
+>>>>>>> origin/develop
    post 'orders/confirm' => 'orders#confirm'
    get 'orders/thanks' => 'orders#thanks'
+   resources :orders, only: [:new, :create, :index, :show]
+   
 
  end
 
@@ -26,18 +35,18 @@ Rails.application.routes.draw do
     get '/' => 'homes#top'
 
     resources :genres, only:[:index, :create, :edit, :update]
-
     resources :items, except: [:destroy]
 
   end
 
    scope module: :public do
 
-    get "customers/unsubscribe" => "customer#unsubscribe"
-    patch "customers/withdraw" => "customer#withdraw"
+
+ 
+
+    get "customers/unsubscribe" => "customers#unsubscribe"
+    patch "customers/withdraw" => "customers#withdraw"
+
     resource :customers, only: [:show, :edit, :update]
    end
-   
-  
-
-end
+ end
