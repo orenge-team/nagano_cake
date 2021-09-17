@@ -32,9 +32,11 @@ Rails.application.routes.draw do
   end
 
    scope module: :public do
+
+    get "customers/unsubscribe" => "customers#unsubscribe"
+    patch "customers/withdraw" => "customers#withdraw"
     resource :customers, only: [:show, :edit, :update]
-    get "customers/unsubscribe" => "customer#unsubscribe"
-    patch "customers/withdraw" => "customer#withdraw"
    end
+
 
 end
