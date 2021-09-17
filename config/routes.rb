@@ -15,19 +15,10 @@ Rails.application.routes.draw do
 
   scope module: :public do
    resources :addresses, except:  [:new]
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-   
-=======
->>>>>>> 2f611e3b2bcd07185ae9d0400d874890db885211
-
-   resources :orders, only: [:new, :create, :index, :show]
->>>>>>> origin/develop
    post 'orders/confirm' => 'orders#confirm'
    get 'orders/thanks' => 'orders#thanks'
    resources :orders, only: [:new, :create, :index, :show]
-   
+
 
  end
 
@@ -42,7 +33,7 @@ Rails.application.routes.draw do
    scope module: :public do
 
 
- 
+
 
     get "customers/unsubscribe" => "customers#unsubscribe"
     patch "customers/withdraw" => "customers#withdraw"
