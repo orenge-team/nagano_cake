@@ -24,18 +24,18 @@
               <% if admin_signed_in? %>
                 <%= link_to "ログアウト", destroy_admin_session_path, method: :delete %>
               <% else %>
-                <%= link_to "ログイン", new_admin_session_path %>
+                <%= link_to "ログイン", new_admin_session_path, method: :get %>
               <% end %>
-              
-              
-              
-              
+
+
+
+
           <!--<div class="headder_flex">-->
           <!--  <h1>LOGO</h1>-->
           <!--  <nav>-->
           <!--    <ul>-->
           <!--      < if admin_signed_in? %>-->
-                
+
           <!--        <li><button class="btn btn-default"><= link_to '商品一覧', adomin_items_path %></button></li>-->
           <!--        <li><button class="btn btn-default"><= link_to '会員一覧', about_path %></button></li>-->
           <!--        <li><button class="btn btn-default"><= link_to '注文履歴一覧', orders_path %></button></li>-->
