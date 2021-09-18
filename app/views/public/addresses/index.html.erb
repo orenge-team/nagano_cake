@@ -19,8 +19,8 @@
                   <td><%= address.postal_code %></td>
                   <td><%= address.address %></td>
                   <td><%= address.name %></td>
-                  <td><%= link_to "編集する", edit_customers_address_path(address) %></td>
-                  <td><%= link_to "削除する",customers_address_path(address),  method: :delete, "data-confirm" => "本当に削除しますか？" %></td>
+                  <td><%= link_to "編集する", edit_address_path(public_address) %></td>
+                  <td><%= link_to "削除する",address_path(public_address),  method: :delete, "data-confirm" => "本当に削除しますか？" %></td>
                 <% end %>
               </tbody>
          </table>
