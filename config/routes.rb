@@ -25,7 +25,6 @@ Rails.application.routes.draw do
 
   scope module: :public do
    resources :addresses, except:  [:new]
-
    post 'orders/confirm' => 'orders#confirm'
    get 'orders/thanks' => 'orders#thanks'
    resources :orders, only: [:new, :create, :index, :show]

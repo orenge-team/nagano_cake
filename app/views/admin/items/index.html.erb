@@ -1,9 +1,7 @@
 <h3 class="items_index">商品一覧</h3>
 <!-- < = link_to " ", new_admin_item_path, class-->
 
-<% @items.each do |item| %>
 <table class="table">
-  <thead>
     <tr>
       <th>商品ID</th>
       <th>商品名</th>
@@ -11,15 +9,24 @@
       <th>ジャンル</th>
       <th>ステータス</th>
     </tr>
-  </thead>
-  <tbody>
+    
+    
+  <% @items.each do |item| %>
+  
     <tr>
       <td><%= item.id %></td>
       <td><%= item.name %></td>
       <td><%= item.price %></td>
-      <td><%= item.genre %></td>
-      <td><%= item.is_active%></td>
+      <td><%= item.genre_id %></td>
+      <td>
+       <% if item.is_active %>
+         販売中
+       <% else %>
+         販売休止中
+       <% end %>
+      
+      </td>
     </tr>
-  </tbody>
+  <% end %>
 </table>
-<% end %>
+
