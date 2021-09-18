@@ -10,13 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-
 ActiveRecord::Schema.define(version: 2021_09_18_121809) do
 
-
   create_table "addresses", force: :cascade do |t|
-    t.integer "customer_id"
     t.string "name"
     t.string "postal_code"
     t.string "address"
@@ -81,8 +77,6 @@ ActiveRecord::Schema.define(version: 2021_09_18_121809) do
     t.integer "genre_id"
   end
 
-
-
   create_table "order_items", force: :cascade do |t|
     t.integer "item_id"
     t.integer "order_id"
@@ -104,7 +98,6 @@ ActiveRecord::Schema.define(version: 2021_09_18_121809) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
-
 
   create_table "public_customers", force: :cascade do |t|
     t.datetime "created_at", null: false
