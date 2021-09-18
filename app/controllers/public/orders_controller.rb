@@ -2,7 +2,7 @@ class Public::OrdersController < ApplicationController
 
   def new
     # カート内商品、配送先が作成されてから記述
-    @order = Public::Order.new
+    @order = Order.new
   end
   
   def show
