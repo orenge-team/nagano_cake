@@ -21,7 +21,6 @@
         </button>
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav ml-auto">
-
               <% if admin_signed_in? %>
                 <%= link_to "ログアウト", destroy_admin_session_path, method: :delete %>
               <% else %>
@@ -31,19 +30,41 @@
 
 
 
+          <!--<div class="headder_flex">-->
+          <!--  <h1>LOGO</h1>-->
+          <!--  <nav>-->
+          <!--    <ul>-->
+          <!--      < if admin_signed_in? %>-->
 
-    
-            </ul>
+          <!--        <li><button class="btn btn-default"><= link_to '商品一覧', adomin_items_path %></button></li>-->
+          <!--        <li><button class="btn btn-default"><= link_to '会員一覧', about_path %></button></li>-->
+          <!--        <li><button class="btn btn-default"><= link_to '注文履歴一覧', orders_path %></button></li>-->
+          <!--        <li><button class="btn btn-default"><= link_to 'ジャンル一覧', admin_genres_path %></button></li>-->
+          <!--        <li><button class="btn btn-default"><= link_to 'ログアウト', destroy_admin_session_path, method: :delete %></button></li>-->
+          <!--      < else %>-->
+          <!--        <li><button class="btn btn-default"><= link_to 'About', about_path %></button></li>-->
+          <!--        <li><button class="btn btn-default"><= link_to '商品一覧' , admin_items_path %></button></li>-->
+          <!--        <li><button class="btn btn-default"><= link_to '新規登録', new_admin_item_path %></button></li>-->
+          <!--        <li><button class="btn btn-default"><= link_to 'ログイン', new_admin_session_path %></button></li>-->
+          <!--      < end %>-->
+          <!--    </ul>-->
+          <!--  </nav>-->
+
           </div>
-       </div>
     </header>
-    <main></main>
-    <div class='container'>
-      <div class='row'>
-        <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
-         <%= yield %>
+    <main>
+      <div class='container'>
+        <div class='row'>
+          <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
+           <%= yield %>
+          </div>
         </div>
       </div>
-    </div>
+    </main>
   </body>
+  <footer>
+
+  </footer>
 </html>
+
+
