@@ -1,2 +1,3 @@
 class PublicCustomer < ApplicationRecord
+  
 end
