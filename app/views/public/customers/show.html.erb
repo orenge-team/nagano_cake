@@ -41,24 +41,25 @@
           </tr>
         </tbody>
       </table>
+        <tfoot>
+        <table>
+        <tr>
+          <td>
+            <%= link_to "配送先", class: "btn btn-sm btn-success text-white"  %>
+          </td>
+        <tr>
+        <%= yield %>
+      </tfoot>
+      </table>
       </div>
     </div>
   </div>
 
 
-  <table class="table2">
-      <tfoot>
-        <tr>
-          <th>
-            <% if customer_signed_in? %>
+　　　　　　<% if customer_signed_in? %>
               <p><%= link_to "ログアウト", destroy_customer_session_path, method: :delete %></p>
             <% else %>
               <p><%= link_to "新規登録", new_customer_registration_path %></p>
               <p><%= link_to "ログイン", new_customer_session_path %></p>
             <% end %>
-          </th>
-        <tr>
-        <%= yield %>
-      </tfoot>
-  </table>
-
+             <%= yield %>
