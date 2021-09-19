@@ -13,6 +13,42 @@
 
   <body>
     <header>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+       <div class="container">
+        <a class="navbar-brand" href="/"><span>ながのCAKE</span></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ml-auto">
+              <% if admin_signed_in? %>
+                <%= link_to "ログアウト", destroy_admin_session_path, method: :delete %>
+              <% else %>
+                <%= link_to "ログイン", new_admin_session_path, method: :get %>
+              <% end %>
+
+
+
+
+          <!--<div class="headder_flex">-->
+          <!--  <h1>LOGO</h1>-->
+          <!--  <nav>-->
+          <!--    <ul>-->
+          <!--      < if admin_signed_in? %>-->
+
+          <!--        <li><button class="btn btn-default"><= link_to '商品一覧', adomin_items_path %></button></li>-->
+          <!--        <li><button class="btn btn-default"><= link_to '会員一覧', about_path %></button></li>-->
+          <!--        <li><button class="btn btn-default"><= link_to '注文履歴一覧', orders_path %></button></li>-->
+          <!--        <li><button class="btn btn-default"><= link_to 'ジャンル一覧', admin_genres_path %></button></li>-->
+          <!--        <li><button class="btn btn-default"><= link_to 'ログアウト', destroy_admin_session_path, method: :delete %></button></li>-->
+          <!--      < else %>-->
+          <!--        <li><button class="btn btn-default"><= link_to 'About', about_path %></button></li>-->
+          <!--        <li><button class="btn btn-default"><= link_to '商品一覧' , admin_items_path %></button></li>-->
+          <!--        <li><button class="btn btn-default"><= link_to '新規登録', new_admin_item_path %></button></li>-->
+          <!--        <li><button class="btn btn-default"><= link_to 'ログイン', new_admin_session_path %></button></li>-->
+          <!--      < end %>-->
+          <!--    </ul>-->
+          <!--  </nav>-->
       <!--<nav class="navbar navbar-expand-lg navbar-dark bg-dark">-->
       <!-- <div class="container">-->
       <!--  <a class="navbar-brand" href="/"><span>ながのCAKE</span></a>-->

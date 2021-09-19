@@ -1,6 +1,6 @@
 <h1>マイページ</h1>
 <div class="container">
-  <div class="row"><
+  <div class="row">
     <div class="col-md-8 offset-md-1">
       <thead>
         <table class="table1">
@@ -40,9 +40,26 @@
             <td><%= @customer.email %></td>
           </tr>
         </tbody>
+      </table>
+        <tfoot>
+        <table>
+        <tr>
+          <td>
+            <%= link_to "配送先", class: "btn btn-sm btn-success text-white"  %>
+          </td>
+        <tr>
+        <%= yield %>
+      </tfoot>
+      </table>
       </div>
     </div>
   </div>
 
 
-  
+　　　　　　<% if customer_signed_in? %>
+              <p><%= link_to "ログアウト", destroy_customer_session_path, method: :delete %></p>
+            <% else %>
+              <p><%= link_to "新規登録", new_customer_registration_path %></p>
+              <p><%= link_to "ログイン", new_customer_session_path %></p>
+            <% end %>
+             <%= yield %>
