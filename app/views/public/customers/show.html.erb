@@ -44,11 +44,17 @@
         <tfoot>
         <table>
         <tr>
+          <td>配送先</td>
           <td>
-            <%= link_to "配送先", class: "btn btn-sm btn-success text-white"  %>
+            <%= link_to "配送先", addresses_path, class: "btn btn-sm btn-success text-white"  %>
           </td>
+        </tr>
         <tr>
-        <%= yield %>
+          <td>注文一覧</td>
+          <td>
+            <%= link_to "注文一覧", orders_path, class: "btn btn-sm btn-success text-white"  %>
+          </td>
+        </tr>
       </tfoot>
       </table>
       </div>
