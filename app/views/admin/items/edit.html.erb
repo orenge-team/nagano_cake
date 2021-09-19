@@ -1,8 +1,8 @@
-<%= render 'admin/items/form', item: @item, genres: @genres, item.genre_id: @item.genre_id %>
-
-<form>
-    <h4>商品新規登録</h4>
-    <%= form_with model:item, url: admin_items_path, local:true do |f| %>
+<div class='container'>
+  <div class='row'>
+    <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
+     <h4>商品新規登録</h4>
+     <%= form_with model:item, url: admin_items_path, local:true do |f| %>
       <div class="row">
         <div class="control-label col-3">商品画像</div>
         <div class="col-8">
@@ -43,6 +43,7 @@
       <div class="form-group">
          <%= f.submit '新規登録', class: 'btn btn-success' %>
       </div>
-   <% end %>
-
-</form>
+     <% end %>
+   </div>
+ </div>
+</div>

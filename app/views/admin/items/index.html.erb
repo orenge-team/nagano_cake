@@ -9,22 +9,22 @@
       <th>ジャンル</th>
       <th>ステータス</th>
     </tr>
-    
-    
+
+
   <% @items.each do |item| %>
-  
+
     <tr>
       <td><%= item.id %></td>
       <td><%= item.name %></td>
       <td><%= item.price %></td>
       <td><%= item.genre_id %></td>
       <td>
-       <% if item.is_active %>
-         販売中
-       <% else %>
+       <% if item.is_active.present? %>
          販売休止中
+       <% else %>
+         販売中
        <% end %>
-      
+
       </td>
     </tr>
   <% end %>
