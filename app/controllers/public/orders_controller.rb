@@ -3,10 +3,21 @@ class Public::OrdersController < ApplicationController
   def new
     # カート内商品、配送先が作成されてから記述
     @order = Order.new
+    @customer = current_customer
   end
-  
+
+  def index
+    @order = Order.all
+  end
+
   def show
-  
+    @order = Order.(params[:id])
+  end
+
+  def create
+  end
+
+  def confirm
   end
 
   def thanks
