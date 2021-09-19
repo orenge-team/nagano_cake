@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'publick_items/index'
+  get 'publick_items/show'
   root to: 'homes#top'
   get "homes/about" => "homes#about", as: "about"
 
@@ -8,6 +10,7 @@ Rails.application.routes.draw do
     patch "customers/withdraw" => "customers#withdraw"
 
     resource :customers, only: [:show, :edit, :update]
+    resources :items, only: [:index, :show]
    end
 
 
