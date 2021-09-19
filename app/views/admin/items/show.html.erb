@@ -1,13 +1,13 @@
 <h3>商品詳細</h3>
 <div class="container">
   <div class="row">
-    
-    <div class="col-lg-4">
-      <%= attachment_image_tag @item, :image, :fill, 300, 300, format: 'jpeg' %>
+
+    <div class="col-md-5">
+      <%= attachment_image_tag @item, :image, :fill, 300, 300, format: 'jpeg',fallback: "no-image-icon.jpg",size: '300x300'%>
     </div>
-    
-    <div class="col-lg-8">
-      <table>
+
+    <div class="col-md-7">
+      <table class="table">
         <tr>
           <td>商品名</td>
           <td><%= @item.name %></td>
@@ -18,23 +18,21 @@
         </tr>
         <tr>
           <td>ジャンル</td>
-          <td><%= @genre %></td>
+          <td><%= @item.genre.name %></td>
         </tr>
         <tr>
-          <td>税込価格（税抜価格）</td>
-          <td><%= @item.price%></td>
+          <td>税抜価格<br>
+          （税込価格）</td>
+          <td><%= @item.price %>(<%=@item.add_tax_price.to_s(:delimited) %>)円</td>
         </tr>
         <tr>
           <td>販売ステータス</td>
-          <td>
-            <% if @item.is_active == true %>
-              販売中
-            <% else %>
-              販売休止中
-            <% end %>
-          </td>
+          <td><%= @item.is_active %></td>
         </tr>
       </table>
+      
+      <%= link_to "編集する", edit_admin_item_path(@item), class: "btn btn-success" %>
     </div>
+    
   </div>
-</div>  
+</div>
