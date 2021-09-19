@@ -4,26 +4,31 @@
       <h2>配送先登録/一覧</h2>
       <%= render 'public/addresses/createAddress', address: @address %>
     </div>
-    <div class='col-md-8 offset-md-1'>
-      <table class = "table table-hover table-inverse" >
-              <thead>
-                <tr>
-                  <th>郵便番号</th>
-                  <th>住所</th>
-                  <th>宛名</th>
-                  <th colspan="2"></th>
-                </tr>
-              </thead>
-              <tbody>
-                <% @addresses.each do |address| %>
-                  <td><%= address.postal_code %></td>
-                  <td><%= address.address %></td>
-                  <td><%= address.name %></td>
-                  <td><%= link_to "編集する", edit_address_path(public_address) %></td>
-                  <td><%= link_to "削除する",address_path(public_address),  method: :delete, "data-confirm" => "本当に削除しますか？" %></td>
-                <% end %>
-              </tbody>
-         </table>
+      <div class='col-md-8 offset-md-1'>
+        <table class = "table table-hover table-inverse" >
+          <thead>
+            <tr>
+              <th>郵便番号</th>
+              <th>住所</th>
+              <th>宛名</th>
+              <th colspan="2"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @addresses.each do |address| %>
+              <tr>
+                <td>
+                  <%= address.postal_code %>
+                </td>
+                <td><%= address.address %></td>
+                <td><%= address.name %></td>
+                <td><%= link_to "編集する", edit_address_path(address), class: 'btn btn-success' %></td>
+                <td><%= link_to "削除する",address_path(address), class: 'btn btn-danger',  method: :delete, "data-confirm" => "本当に削除しますか？" %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
 </div>

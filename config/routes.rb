@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
 
   devise_for :admin, controllers:{
-    sessions:     'admins/sessions'
+    sessions:     'admin/sessions'
   }
 
   devise_for :customers, controllers:{
