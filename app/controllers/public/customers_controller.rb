@@ -12,11 +12,10 @@ class Public::CustomersController < ApplicationController
     @customer = current_customer
     if @customer.update(customer_params)
       flash[:notice] = "You have updated."
-      redirect_to public_customer
+      redirect_to controller: :customers, action: :show
     else
       render :edit
     end
-
   end
 
   def unsubscribe
@@ -33,7 +32,7 @@ class Public::CustomersController < ApplicationController
   private
 
     def customer_params
-      params_require(:customer).permit(:first_name, :last_name, :first_name_kana, :last_name_kana, :email, :postal_code, :adress, :phone_number)
+      params.require(:customer).permit(:first_name, :last_name, :first_name_kana, :last_name_kana, :email, :postal_code, :adress, :phone_number)
     end
 
 
