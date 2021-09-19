@@ -11,13 +11,21 @@ class Public::OrdersController < ApplicationController
   end
 
   def show
-    @order = Order.(params[:id])
+    
   end
 
   def create
+    @order = Order.new(order_params)
+    @order.customer_id = current_customer.id
+    if @order.save
+      redirect_to orders_thanks_path(current_customer)
+    else
+      render :confirm
+    end
   end
 
   def confirm
+    @order = current_customer
   end
 
   def thanks
