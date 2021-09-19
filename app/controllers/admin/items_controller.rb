@@ -2,8 +2,6 @@ class Admin::ItemsController < ApplicationController
 
   def index
     @items = Item.all
-    # @item = 
-    # @genre = @item.genre.name
 
   end
 
