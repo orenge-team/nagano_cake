@@ -1,12 +1,15 @@
 <div class='container'>
   <div class='row mt-4'>
     <div class="col-12 mx-auto">
-      <h3 class="items_index">商品一覧</h3>
-      <%= link_to new_admin_item_path do %>
-        <i class="far fa-plus-square fa-2x float-right text-dark"></i>
-      <% end %>
-    </div>
-    <table class="table mt-4">
+      <div class="row">
+        <div class="col-11"><h3 class="items_index">商品一覧</h3></div>
+        <div class="float-right">
+          <%= link_to new_admin_item_path do %>
+           <i class="far fa-plus-square fa-2x text-dark"></i>
+          <% end %>
+        </div>
+      </div>
+     <table class="table table-hover mt-4">
       <thead class="thead-light">
         <tr>
           <th>商品ID</th>
@@ -17,20 +20,21 @@
         </tr>
       </thead>
       <tbody>
-         <% @items.each do |item| %>
-           <tr>
-             <td><%= item.id %></td>
-             <td><%= link_to admin_item_path(item) do %>
-                  <div class="text-dark"><%= item.name %></div>
-                 <% end %>
-             </td>
-             <td><%= item.price %></td>
-             <td><%= item.genre.name %></td>
-             <td><%= item.is_active %></td>
-           </tr>
-         <% end %>
+        <% @items.each do |item| %>
+          <tr>
+            <td><%= item.id %></td>
+            <td>
+              <%= link_to admin_item_path(item) do %>
+               <div class="text-dark"><%= item.name %></div>
+              <% end %>
+            </td>
+            <td><%= item.price %></td>
+            <td><%= item.genre.name %></td>
+            <td><%= item.is_active %></td>
+          </tr>
+        <% end %>
       </tbody>
-    </table>
+     </table>
     <%= paginate @items %>
   </div>
  </div>
