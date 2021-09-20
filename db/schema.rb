@@ -42,14 +42,7 @@ ActiveRecord::Schema.define(version: 2021_09_19_132607) do
   end
 
   create_table "customers", force: :cascade do |t|
-    t.string "first_name"
-    t.string "last_name"
-    t.string "first_name_kana"
-    t.string "last_name_kana"
     t.string "email", default: "", null: false
-    t.string "postal_code"
-    t.string "address"
-    t.string "phone_number"
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
@@ -89,13 +82,12 @@ ActiveRecord::Schema.define(version: 2021_09_19_132607) do
   end
 
   create_table "orders", force: :cascade do |t|
-    t.string "name", null: false
-    t.string "postal_code", null: false
-    t.string "address", null: false
-    t.integer "total_price", null: false
-    t.integer "delivery_fee", null: false
-    t.integer "payment_method", default: 0, null: false
-    t.integer "status", default: 0, null: false
+    t.string "name"
+    t.string "postal_code"
+    t.string "address"
+    t.integer "total_price"
+    t.integer "delivery_fee"
+    t.integer "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
