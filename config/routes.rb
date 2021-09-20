@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'publick_items/index'
+  get 'publick_items/show'
   root to: 'homes#top'
   get "homes/about" => "homes#about", as: "about"
 
@@ -8,12 +10,13 @@ Rails.application.routes.draw do
     patch "customers/withdraw" => "customers#withdraw"
 
     resource :customers, only: [:show, :edit, :update]
+    resources :items, only: [:index, :show]
    end
 
 
 
   devise_for :admin, controllers:{
-    sessions:     'admins/sessions'
+    sessions:     'admin/sessions'
   }
 
   devise_for :customers, controllers:{
@@ -41,6 +44,7 @@ Rails.application.routes.draw do
 
     resources :genres, only:[:index, :create, :edit, :update]
     resources :items, except: [:destroy]
+    resources :customers, only:[:index, :show, :edit, :update]
 
   end
  end

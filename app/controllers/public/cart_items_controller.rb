@@ -1,5 +1,5 @@
 class Public::CartItemsController < ApplicationController
-  
+
   def index
     @cart_item = CartItem.where(customer_id: current_customer.id)
   end
@@ -31,11 +31,10 @@ class Public::CartItemsController < ApplicationController
     address.destroy
     redirect_to addresses_path(current_customer)
   end
-  
+
   private
     def cart_item_params
       params.require(:cart_item).permit(:item_id, :customer_id, :count )
     end
-  end
-  
+
 end
