@@ -1,7 +1,7 @@
 class Public::CartItemsController < ApplicationController
 
   def index
-    @cart_item = CartItem.where(customer_id: current_customer.id)
+    @cart_items = current_customer.item.cart_item
   end
 
   def create
