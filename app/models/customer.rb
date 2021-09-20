@@ -7,8 +7,11 @@ class Customer < ApplicationRecord
 
 
   has_many :orders, dependent: :destroy
-
-         
   has_many :addresses, dependent: :destroy
+  
+  def full_name
+    self.first_name + " " + self.last_name
+  end
 
+  enum is_deleted: { "有効": false , "退会": true }
 end
