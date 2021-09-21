@@ -19,7 +19,7 @@
       <div class="col-md-9" offset-md-1>
         <table>
           <tr>
-            <td>ようこそ、ながのCAKEへ！<br>
+            <td><h2>ようこそ、ながのCAKEへ！</h2>
                 このサイトは、ケーキ販売のECサイトになります。<br>
                 会員でない方も商品の閲覧はできますが、<br>
                 購入には会員登録が必要になります。<br>
@@ -29,31 +29,32 @@
         </table>
 
 
-
-
-
       <h3>新着商品</h3>
         <table cellpadding="10">
           <tr>
             <td><%= image_tag 'img_raspberry_pudding.jpeg',size: '200x150' , alt: "ラズベリープリン"%></td>
             <td><%= image_tag 'img_cheese_cake.jpeg',size: '200x150' , alt: "チーズケーキ"%></td>
-            <td><%= image_tag 'img_chocolate_cake.jpeg',size: '200x150' , alt: "チョコレートケーキ"%></td>
+            <td><%= image_tag 'img_macaroon.jpeg',size: '200x150' , alt: "マカロン"%></td>
+            <td><%= image_tag 'img_candy.jpeg',size: '200x150' , alt: "フルーツ飴" %></td>
           </tr>
           <tr>
             <td>ラズベリーがのったプリン</td>
             <td>チーズケーキ</td>
-            <td>チョコレートケーキ</td>
+            <td>マカロン</td>
+            <td>フルーツ飴</td>
           </tr>
           <tr>
             <td>¥800</td>
-            <td>¥1,800</td>
             <td>¥2,000</td>
+            <td>¥1,000</td>
+            <td>¥500</td>
           </tr>
         </table>
 
       </div>
     </div>
   </div>
+  <div class="float-right"><%= link_to '全ての商品を見る >', items_path %></div>
 </div>
 
 
