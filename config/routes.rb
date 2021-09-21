@@ -27,8 +27,12 @@ Rails.application.routes.draw do
   scope module: :public do
    resources :addresses, except:  [:new]
 
-   resources :cart_items, only:  [:index, :create, :update, :destroy]
-   delete 'cart_items/all_destroy' => 'cart_items#all_destroy'
+
+   resources :cart_items, only:  [:index, :create, :update, :destroy]do
+     collection do
+       delete 'destroy_all'
+     end
+    end
 
    post 'orders/confirm' => 'orders#confirm'
    get 'orders/thanks' => 'orders#thanks'
@@ -46,3 +50,4 @@ Rails.application.routes.draw do
 
   end
  end
+
