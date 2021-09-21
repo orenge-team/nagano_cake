@@ -10,23 +10,36 @@
       <th>注文詳細</th>
     </tr>
   </thead>
-  <%= @orders.each do |order| %>
+
    <tbody>
+      <%= @orders.each do |order| %>
      <tr>
        <td>
          <%= order.created_at.strftime('%Y/%m/%d') %>
        </td>
        <td>
-         <%= order.postal_code %>
-         <%= order.address %>
+         〒<%= order.postal_code %>
+         <%= order.address %><br>
          <%= order.name %>
        </td>
        <td>
-         <%= order.cart_item.name %>
+         <% order.order_items.each do |order_item| %>
+          <%= order_item.item.name %>
+         <% end %>
        </td>
-       <% end %>
+
+       <td>
+        <%= order.total_price.to_s(:delimited, delimiter: ',') %>
+       </td>
+       <td>
 
        </td>
+       <td>
+         <%= link_to "表示する", class: "btn btn-success" %>
+       </td>
+
      </tr>
-   </tbody>
+     <% end %>
+     </tbody>
+
 </table>
