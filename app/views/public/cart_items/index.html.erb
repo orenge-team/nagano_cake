@@ -1,11 +1,33 @@
-<h1>Public::CartItems#index</h1>
-<% @cart_items.each do |item| %>
-  <tr>
-    <td><%= item.image_id %></td>
-    <td><%= item.name %></td>
-    <td><%= item.count %></td>
-    <td><%= item.price %></td>
-    <td><%= link_to "編集する", edit_address_path(address), class: 'btn btn-success' %></td>
-    <td><%= link_to "削除する",address_path(address), class: 'btn btn-danger',  method: :delete, "data-confirm" => "本当に削除しますか？" %></td>
-  </tr>
-<% end %>
+<h1>ショッピングカート</h1>
+
+<div class='container px-5 px-sm-0'>
+  <div class='row'>
+        <table class = "table table-hover table-inverse" >
+        <div><%= link_to "カート内を空にする",cart_items_path(cart_items_all_destroy_path), class: 'btn btn-danger',  method: :delete, "data-confirm" => "本当に削除しますか？" %></div>
+          <thead>
+            <tr>
+              <th>商品名</th>
+              <th>単価（税込）</th>
+              <th>数量</th>
+              <th>小計</th>
+              <th colspan="1"></th>
+            </tr>
+          </thead>
+            <%= form_with model:@CartItem do |f| %>
+          <tbody>
+            <% @cart_items.each do |cart_item| %>
+              <tr>
+                <td><%= cart_item.item.name %></td>
+                <td><%= cart_item.item.name %></td>
+                <td><%= cart_item.count %></td>
+                <td><%= cart_item.item.price %></td>
+                <td><%= link_to "削除する",cart_items_path(cart_item), class: 'btn btn-danger',  method: :delete, "data-confirm" => "本当に削除しますか？" %></td>
+              </tr>
+            <% end %>
+          </tbody>
+          <%= f.submit '送信'%>
+          <% end %>
+        </table>
+    </div>
+  </div>
+</div>
