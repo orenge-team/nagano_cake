@@ -54,7 +54,7 @@
       <div class="form-group row">
         <div class="col-4"><%= f.label :is_active, "会員ステータス" %></div>
         <div class="col-8">
-          <%= f.radio_button :is_deleted, :"有効", checked: false %>
+          <%= f.radio_button :is_deleted, :"有効" %>
           <%= f.label :is_deleted, "有効" %>
           <%= f.radio_button :is_deleted, :"退会" %>
           <%= f.label :is_deleted, "退会" %>
