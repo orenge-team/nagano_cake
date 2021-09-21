@@ -26,10 +26,10 @@ Rails.application.routes.draw do
 
   scope module: :public do
    resources :addresses, except:  [:new]
-   
+
    resources :cart_items, only:  [:index, :create, :update, :destroy]
    delete 'cart_items/all_destroy' => 'cart_items#all_destroy'
-   
+
    post 'orders/confirm' => 'orders#confirm'
    get 'orders/thanks' => 'orders#thanks'
    resources :orders, only: [:new, :create, :index, :show]
