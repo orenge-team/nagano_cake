@@ -1,50 +1,53 @@
 <h3><%=@customer.full_name %>さんの会員情報編集</h3>
 <div class='container'>
   <div class='row md-4'>
-    <div class="col-4">会員ID</div>
-    <div class="col-8"><%=@customer.id%></div>
+    <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0">
+      <div class= "row">
+        <div class="col-4">会員ID</div>
+        <div class="col-8"><%=@customer.id %></div>
+      </div>
 
-  <%= form_with model:@customer, url:  admin_customer_path(@customer), local:true do |f| %>
+  　　<%= form_with model:@customer, url:  admin_customer_path(@customer), local:true do |f| %>
 
-      <div class="form-group">
+      <div class="form-group row">
         <div class="col-4"><%= f.label :"氏名" %></div>
         <div class="col-8">
-          <%= f.text_field :first_name, class: "first_name col-sm-3 form-control-static name" %>
-          <%= f.text_field :last_name, class: "last_name col-sm-3 form-control-static name" %>
+          <%= f.text_field :first_name, class: "first_name col-md-5 form-control-static name"  %>
+          <%= f.text_field :last_name, class: "last_name col-md-5 form-control-static name"  %>
         </div>
       </div>
 
 
-      <div class="form-group">
+      <div class="form-group row">
         <div class="col-4"><%= f.label :"カナ氏名" %></div>
         <div class="col-8">
-          <%= f.text_field :first_name_kana, class: "first_name_kana col-sm-3 form-control-static name" %>
-          <%= f.text_field :last_name_kana, class: "last_name_kana col-sm-3 form-control-static name" %>
+          <%= f.text_field :first_name_kana, class: "first_name_kana col-md-5 form-control-static name" %>
+          <%= f.text_field :last_name_kana, class: "last_name_kana col-md-5 form-control-static name" %>
         </div>
       </div>
 
-      <div class="form-group">
+      <div class="form-group row">
         <div class="col-4"><%= f.label :"郵便番号" %></div>
         <div class="col-8">
           <%= f.text_field :postal_code, class: "postal_code form-control-static" %>
         </div>
       </div>
 
-      <div class="form-group">
+      <div class="form-group row">
         <div class="col-4"><%= f.label :"住所" %></div>
         <div class="col-8">
           <%= f.text_field :address, class: "address form-control-static"%>
         </div>
       </div>
 
-      <div class="form-group">
+      <div class="form-group row">
         <div class="col-4"><%= f.label :"電話番号" %></div>
         <div class="col-8">
           <%= f.text_field :phone_number, class: "phone_number form-control-static" %>
         </div>
       </div>
 
-      <div class="form-group">
+      <div class="form-group row">
         <div class="col-4"><%= f.label :"メールアドレス" %></div>
         <div class="col-8">
             <%= f.text_field :email, class: "email form-control-static" %>
@@ -52,18 +55,20 @@
       </div>
 
       <div class="form-group row">
-        <div class="col-4"><%= f.label :is_active, "会員ステータス" %></div>
+        <div class="col-4"><%= f.label :is_deleted, "会員ステータス" %></div>
         <div class="col-8">
-          <%= f.radio_button :is_deleted, :"有効", checked: false %>
+          <%= f.radio_button :is_deleted, :"有効" %>
           <%= f.label :is_deleted, "有効" %>
           <%= f.radio_button :is_deleted, :"退会" %>
           <%= f.label :is_deleted, "退会" %>
         </div>
       </div>
-      <div class="form-group">
+      <div class="form-group row">
        <%= f.submit "変更を保存", class: "btn btn-success" %>
       </div>
 
 
-  <% end %>
-
+　　　<% end %>
+    </div>
+  </div>
+</div>
