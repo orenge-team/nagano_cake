@@ -1,35 +1,38 @@
 class Public::CartItemsController < ApplicationController
 
   def index
-    @cart_items = current_customer.item.cart_item
+    @cart_items = CartItem.where(customer_id: current_customer.id)
+    @order = Order.new
   end
 
   def create
     @cart_item = CartItem.new(cart_item_params)
     @cart_item.customer_id = current_customer.id
-    @cart_item.save
-    redirect_to cart_items_path
-  end
-
-  def update
-    @count = CartItem.item_id
-    if @count.update(cart_item_params)
-    redirect_to cart_items_path
+    if @cart_item.save
+      redirect_to cart_items_path
     else
-    render :index
+      session[:cart_item] = @cart_item.attributes.slice(*cart_item_params.keys)
+      @item = Item.find_by(id:@cart_item.item_id)
+      redirect_to item_path(@item.id)
     end
   end
 
-  def destroy
-    address = Address.find(params[:id])
-    address.destroy
-    redirect_to addresses_path(current_customer)
+  def update
+    @cart_item = CartItem.find(params[:id])
+
+    @cart_item.update(count: params[:count].to_i)
+    redirect_to cart_items_path
   end
 
-  def all_destroy
-    address = Address.find(params[:id])
-    address.destroy
-    redirect_to addresses_path(current_customer)
+  def destroy
+    cart_item = CartItem.find(params[:id])
+    cart_item.destroy
+    redirect_to cart_items_path(current_customer)
+  end
+
+  def destroy_all
+    CartItem.destroy_all
+    redirect_to cart_items_path
   end
 
   private
