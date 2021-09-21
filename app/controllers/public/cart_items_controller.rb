@@ -2,6 +2,7 @@ class Public::CartItemsController < ApplicationController
 
   def index
     @cart_items = CartItem.where(customer_id: current_customer.id)
+    @count = CartItem.find_by(count:params[:count])
     @order = Order.new
   end
 
@@ -13,12 +14,14 @@ class Public::CartItemsController < ApplicationController
     else
       session[:cart_item] = @cart_item.attributes.slice(*cart_item_params.keys)
       @item = Item.find_by(id:@cart_item.item_id)
-      redirect_to item_path(@item.id), flash: {alert: '※個数を選択して下さい'}
+      redirect_to item_path(@item.id)
     end
   end
 
   def update
-     @cart_item.update(count: params[:count].to_i)
+    @cart_item = CartItem.find(params[:id])
+
+    @cart_item.update(count: params[:count].to_i)
     redirect_to cart_items_path
   end
 
