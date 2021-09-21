@@ -1,1 +1,65 @@
-<%=  %>
+
+<h1>注文情報確認画面</h1>
+
+<div class='container px-5 px-sm-0'>
+  <div class='row'>
+          <div class="col-md-5">
+
+        <table class = "table table-hover table-inverse" >
+          <thead>
+            <tr>
+              <th></th>
+              <th>商品名</th>
+              <th>単価（税込）</th>
+              <th>数量</th>
+              <th>小計</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @cart_items.each do |cart_items| %>
+            <tr>
+              <td><%= attachment_image_tag cart_items.item, :image, :fill, 50, 50, fallback: "no-image-icon.jpg" %></td>
+              <td><%= cart_items.item.name %></td>
+              <td>¥<%= (cart_items.item.price).to_s(:delimited) %></td>
+              <td><%= cart_items.count %></td>
+              <td>¥<%= (cart_items.item.price*cart_items.count).to_s(:delimited) %></td>
+            <tr>
+              <% end %>
+          </tbody>
+        </table>
+        </div>
+              <div class="col-md-5">
+                <p>送料</p>
+                ¥<%= @delivery_fee.to_s %>
+                <p>商品合計</p>
+                ¥<%= @total.round.to_s(:delimited) %>
+                <p>請求金額</p>
+                ¥<%= @delivery_fee+@total %>
+        </div>
+    </div>
+    <div class='row'>
+      <div class='col'>
+        <%= "支払い方法"  %>
+        <%= @order.payment_method %>
+      </div>
+    </div>
+    <div class='row'>
+      <div class='col'>
+        <%= "お届け先" %>
+        <%= @order.address %>
+      </div>
+    </div>
+    <%= form_with model: @order, url: orders_path, local: true do |f| %>
+      <%= f.hidden_field :name %>
+      <%= f.hidden_field :address %>
+      <%= f.hidden_field :total_price, value: @total %>
+      <%= f.hidden_field :payment_method %>
+            <%= f.hidden_field :postal_code %>
+                  <%= f.hidden_field :delivery_fee %>
+
+
+      <%= f.submit "注文を確定する" %>
+    <% end %>
+
+  </div>
+</div>

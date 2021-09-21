@@ -1,5 +1,9 @@
 class CartItem < ApplicationRecord
   belongs_to :item
   belongs_to :customer
-  has_many :orders
+
+  def sum_price
+    item.add_tax_price * count
+  end
+
 end
