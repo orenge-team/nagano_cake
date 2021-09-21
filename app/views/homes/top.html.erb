@@ -1,19 +1,59 @@
-<h1>Homes#top</h1>
+<% if customer_signed_in? %>
+  <li>
+    <%= link_to "ログアウト", destroy_customer_session_path, method: :delete %>
+  </li>
+<% else %>
+  <li>
+    <%= link_to "新規登録", new_customer_registration_path %>
+  </li>
+  <li>
+    <%= link_to "ログイン", new_customer_session_path %>
+  </li>
+<% end %>
 
-<body>
-    <% if customer_signed_in? %>
-      <li>
-        <%= link_to "ログアウト", destroy_customer_session_path, method: :delete %>
-      </li>
-    <% else %>
-      <li>
-        <%= link_to "新規登録", new_customer_registration_path %>
-      </li>
-      <li>
-        <%= link_to "ログイン", new_customer_session_path %>
-      </li>
-    <% end %>
-  <%= yield %>
-  </body>
+<div class='container'>
+  <div class='row'>
+    <div class="col-md-3">ジャンル検索</div>
+    <!--<=link_to'ケーキ', %>-->
+    
+      <div class="col-md-9" offset-md-1>
+        <table>
+          <tr>
+            <td>ようこそ、ながのCAKEへ！<br>
+                このサイトは、ケーキ販売のECサイトになります。<br>
+                会員でない方も商品の閲覧はできますが、<br>
+                購入には会員登録が必要になります。<br>
+            </td>
+            <td><%= image_tag 'img_strawberry_cake.jpeg',size: '350x250' ,alt: "いちごのホールケーキ"%></td>
+          </tr>
+        </table>
+
+
+
+
+
+      <h3>新着商品</h3>
+        <table cellpadding="10">
+          <tr>
+            <td><%= image_tag 'img_raspberry_pudding.jpeg',size: '200x150' , alt: "ラズベリープリン"%></td>
+            <td><%= image_tag 'img_cheese_cake.jpeg',size: '200x150' , alt: "チーズケーキ"%></td>
+            <td><%= image_tag 'img_chocolate_cake.jpeg',size: '200x150' , alt: "チョコレートケーキ"%></td>
+          </tr>
+          <tr>
+            <td>ラズベリーがのったプリン</td>
+            <td>チーズケーキ</td>
+            <td>チョコレートケーキ</td>
+          </tr>
+          <tr>
+            <td>¥800</td>
+            <td>¥1,800</td>
+            <td>¥2,000</td>
+          </tr>
+        </table>
+
+      </div>
+    </div>
+  </div>
+</div>
 
 
