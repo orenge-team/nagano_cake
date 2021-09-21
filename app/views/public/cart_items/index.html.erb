@@ -21,7 +21,7 @@
               <td><%= cart_items.item.image_id %></td>
               <td><%= cart_items.item.name %></td>
               <td><%= cart_items.item.add_tax_price %></td>
-              <td><%= f.select :count, options_for_select((1..20).to_a) %></td>
+              <td><%= f.select :count, options_for_select([*1..9], {selected: cart_items.count.to_i} ) %></td>
               <td><%= cart_items.item.add_tax_price * cart_items.count %></td>
               <td><%= link_to "削除する",cart_item_path(cart_items), class: 'btn btn-danger',  method: :delete, "data-confirm" => "本当に削除しますか？" %></td>
             <tr>
