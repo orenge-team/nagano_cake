@@ -5,15 +5,17 @@ class Customer < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
 
-  enum is_deleted: { "有効": false , "退会済み": true }
+  enum is_deleted: { "有効": false , "退会": true }
 
   has_many :orders, dependent: :destroy
+
   has_many :addresses, dependent: :destroy
-  
+
+  has_many :cart_items, dependent: :destroy
+
+
   def full_name
     self.first_name + " " + self.last_name
   end
-
-  has_many :cart_items, dependent: :destroy
 
 end

@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'publick_items/index'
-  get 'publick_items/show'
   root to: 'homes#top'
   get "homes/about" => "homes#about", as: "about"
 
@@ -28,10 +26,13 @@ Rails.application.routes.draw do
 
   scope module: :public do
    resources :addresses, except:  [:new]
-   
-   resources :cart_items, only:  [:index, :create, :update, :destroy]
-   patch 'cart_items/all_destroy'
-   
+
+   resources :cart_items, only:  [:index, :create, :update, :destroy]do
+     collection do
+       delete 'destroy_all'
+     end
+    end
+   get 'orders/confirm' => 'orders#confirm'
    post 'orders/confirm' => 'orders#confirm'
    get 'orders/thanks' => 'orders#thanks'
    resources :orders, only: [:new, :create, :index, :show]
@@ -48,3 +49,4 @@ Rails.application.routes.draw do
 
   end
  end
+
