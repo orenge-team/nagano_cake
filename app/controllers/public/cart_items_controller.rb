@@ -2,7 +2,6 @@ class Public::CartItemsController < ApplicationController
 
   def index
     @cart_items = CartItem.where(customer_id: current_customer.id)
-    @count = CartItem.find_by(count:params[:count])
     @order = Order.new
   end
 
