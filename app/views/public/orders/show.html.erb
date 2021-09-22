@@ -1,1 +1,26 @@
-show
+<div class='container px-5 px-sm-0'>
+        <h2>注文履歴詳細</h2>
+  <div class='row'>
+    <div class='col-md-8 offset-md-1'>
+      <p>注文情報</p>
+    </div>
+      <div class='col-md-3'>
+        <p>請求情報</p>
+            <% @addresses.each do |address| %>
+              <tr>
+                <td>
+                  <%= address.postal_code %>
+                </td>
+                <td><%= address.address %></td>
+                <td><%= address.name %></td>
+                <td><%= link_to "編集する", edit_address_path(address), class: 'btn btn-success' %></td>
+                <td><%= link_to "削除する",address_path(address), class: 'btn btn-danger',  method: :delete, "data-confirm" => "本当に削除しますか？" %></td>
+              </tr>
+            <% end %>
+    </div>
+  </div>
+    <div class='row'>
+      <p>注文内容</p>
+    </div>
+
+</div>
