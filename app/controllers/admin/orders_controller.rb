@@ -10,5 +10,8 @@ class Admin::OrdersController < ApplicationController
     redirect_to admin_order_path(order)
   end
 
+  def index
+    @orders = Order.all
+  end
 
 end
