@@ -54,8 +54,13 @@
                     <td><%= order_item.item.name %></td>
                     <td><%= order_item.price %></td>
                     <td><%= order_item.count %></td>
-                    <td><%= order_item.price %></td>
-                    <td><%= order_item.making_status %></td>
+                    <td><%= (order_item.item.price*order_item.count).to_s(:delimited) %></td>
+                    <td>
+                    <!--<#%= form_with model:@order_items, url:admin_order_path, local: true do |f| %>-->
+                    <!-- <#%= f.select :making_status ,Order_items.making_status.keys %>-->
+                    <!-- <#%= f.submit "更新", class:'btn btn-info' %>-->
+                    <!--<3% end %>-->
+                    </td>
                   </tr>
                 <% end %>
               </tbody>
