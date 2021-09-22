@@ -7,7 +7,7 @@ class Public::OrdersController < ApplicationController
   end
 
   def index
-    @order = Order.all
+    @orders = Order.all
   end
 
   def show
@@ -40,7 +40,7 @@ class Public::OrdersController < ApplicationController
     if params[:order][:address_number] == "1"
       @order.name = current_customer.first_name+current_customer.last_name
       @order.address = current_customer.address
-      @order.address = current_customer.postal_code
+      @order.postal_code = current_customer.postal_code
       @order.delivery_fee = 800
 
     elsif params[:order][:address_number] == "2"
@@ -71,6 +71,8 @@ class Public::OrdersController < ApplicationController
     def order_params
       params.require(:order).permit(:name,:postal_code,:address,:total_price,:delivery_fee,:status,:item_id,:payment_method,:customer_id)
     end
+    
+    
 
 end
 
