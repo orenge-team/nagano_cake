@@ -1,16 +1,3 @@
-<% if customer_signed_in? %>
-  <li>
-    <%= link_to "ログアウト", destroy_customer_session_path, method: :delete %>
-  </li>
-<% else %>
-  <li>
-    <%= link_to "新規登録", new_customer_registration_path %>
-  </li>
-  <li>
-    <%= link_to "ログイン", new_customer_session_path %>
-  </li>
-<% end %>
-
 <div class='container'>
   <div class='row'>
     <div class="col-md-3">ジャンル検索</div>
@@ -27,10 +14,13 @@
             <td><%= image_tag 'img_strawberry_cake.jpeg',size: '350x250' ,alt: "いちごのホールケーキ"%></td>
           </tr>
         </table>
-
-
+    </div>
+  </div>
+  <div class='row'>
+    <div class="col-md-3"></div>
+      <div class="col-md-9" offset-md-1>
       <h3>新着商品</h3>
-        <table cellpadding="10">
+        <table cellpadding="5">
           <tr>
             <td><%= image_tag 'img_raspberry_pudding.jpeg',size: '200x150' , alt: "ラズベリープリン"%></td>
             <td><%= image_tag 'img_cheese_cake.jpeg',size: '200x150' , alt: "チーズケーキ"%></td>
@@ -50,7 +40,6 @@
             <td>¥500</td>
           </tr>
         </table>
-
       </div>
     </div>
   </div>
