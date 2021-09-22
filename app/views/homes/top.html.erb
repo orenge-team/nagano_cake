@@ -1,49 +1,47 @@
 <div class='container'>
   <div class='row'>
-    <div class="col-md-3">ジャンル検索</div>
+    <div class="col-lg-4">ジャンル検索</div>
     <!--<=link_to'ケーキ', %>-->
     
-      <div class="col-md-9" offset-md-1>
-        <table>
-          <tr>
-            <td><h2>ようこそ、ながのCAKEへ！</h2>
-                このサイトは、ケーキ販売のECサイトになります。<br>
-                会員でない方も商品の閲覧はできますが、<br>
-                購入には会員登録が必要になります。<br>
-            </td>
-            <td><%= image_tag 'img_strawberry_cake.jpeg',size: '350x250' ,alt: "いちごのホールケーキ"%></td>
-          </tr>
-        </table>
-    </div>
+      <div class="col-md-5" offset-md-1>
+        <h2>ようこそ、ながのCAKEへ！</h2>
+            このサイトは、ケーキ販売のECサイトになります。<br>
+            会員でない方も商品の閲覧はできますが、<br>
+            購入には会員登録が必要になります。<br>
+      </div>
+      <div class="col-md-3" offset-md-1>
+           <%= image_tag 'img_strawberry_cake.jpeg',size: '350x250' ,alt: "いちごのホールケーキ"%>
+      </div>
+  </div>
+  
+  <div class='row'>
+    <div class="col-md-4"></div>
+    <h3>新着商品</h3>
   </div>
   <div class='row'>
-    <div class="col-md-3"></div>
-      <div class="col-md-9" offset-md-1>
-      <h3>新着商品</h3>
-        <table cellpadding="5">
-          <tr>
-            <td><%= image_tag 'img_raspberry_pudding.jpeg',size: '200x150' , alt: "ラズベリープリン"%></td>
-            <td><%= image_tag 'img_cheese_cake.jpeg',size: '200x150' , alt: "チーズケーキ"%></td>
-            <td><%= image_tag 'img_macaroon.jpeg',size: '200x150' , alt: "マカロン"%></td>
-            <td><%= image_tag 'img_candy.jpeg',size: '200x150' , alt: "フルーツ飴" %></td>
-          </tr>
-          <tr>
-            <td>ラズベリーがのったプリン</td>
-            <td>チーズケーキ</td>
-            <td>マカロン</td>
-            <td>フルーツ飴</td>
-          </tr>
-          <tr>
-            <td>¥800</td>
-            <td>¥2,000</td>
-            <td>¥1,000</td>
-            <td>¥500</td>
-          </tr>
-        </table>
+    <div class="col-md-4"></div>
+      <div class="col-md-2" offset-md-1>
+        <%= image_tag 'img_raspberry_pudding.jpeg',size: '150x100' , alt: "ラズベリープリン"%><br>
+        ラズベリーがのったプリン<br>
+        ¥800
       </div>
-    </div>
+      <div class="col-md-2" offset-md-1>
+        <%= image_tag 'img_cheese_cake.jpeg',size: '150x100' , alt: "チーズケーキ"%><br>
+        チーズケーキ<br> 
+        ¥2,000 
+      </div>    
+      <div class="col-md-2" offset-md-1>  
+        <%= image_tag 'img_macaroon.jpeg',size: '150x100' , alt: "マカロン"%> <br> 
+        マカロン<br> 
+        ¥1,000
+       </div>
+       <div class="col-md-2" offset-md-1>
+         <%= image_tag 'img_candy.jpeg',size: '150x100' , alt: "フルーツ飴" %><br> 
+         フルーツ飴<br> 
+         ¥500 
+       </div>    
   </div>
-  <div class="float-right"><%= link_to '全ての商品を見る >', items_path %></div>
+  <div class="float-lg-right"><%= link_to '全ての商品を見る >', items_path %></div>
 </div>
 
 
