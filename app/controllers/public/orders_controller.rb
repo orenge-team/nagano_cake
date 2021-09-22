@@ -42,9 +42,8 @@ class Public::OrdersController < ApplicationController
       @order.address = current_customer.address
       @order.postal_code = current_customer.postal_code
       @order.delivery_fee = 800
-
     elsif params[:order][:address_number] == "2"
-      if Address.exists?(name: params[:order][:registered])
+      if Address.exists?(id: params[:order][:registered])
         @order.name = Address.find(params[:order][:registered]).name
         @order.address = Address.find(params[:order][:registered]).address
         @order.postal_code = Address.find(params[:order][:registered]).postal_code
@@ -70,7 +69,7 @@ class Public::OrdersController < ApplicationController
   private
 
     def order_params
-      params.require(:order).permit(:name,:postal_code,:address,:total_price,:delivery_fee,:status,:item_id,:payment_method,:customer_id)
+      params.require(:order).permit(:name,:postal_code,:address,:total_price,:delivery_fee,:status,:item_id,:payment_method,:customer_id )
     end
     
     
