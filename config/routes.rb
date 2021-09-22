@@ -27,18 +27,21 @@ Rails.application.routes.draw do
   scope module: :public do
    resources :addresses, except:  [:new]
 
+
    resources :cart_items, only:  [:index, :create, :update, :destroy]do
      collection do
        delete 'destroy_all'
      end
     end
+
    get 'orders/confirm' => 'orders#confirm'
+
    post 'orders/confirm' => 'orders#confirm'
    get 'orders/thanks' => 'orders#thanks'
    resources :orders, only: [:new, :create, :index, :show]
 
 
- end
+   end
 
   namespace :admin do
     get '/' => 'homes#top'
