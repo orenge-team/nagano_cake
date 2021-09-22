@@ -31,8 +31,9 @@
        <td>
         <%= order.total_price.to_s(:delimited, delimiter: ',') %>
        </td>
-       <td>
 
+       <td>
+        <%= order.status %>
        </td>
        <td>
          <%= link_to "表示する", class: "btn btn-success" %>
