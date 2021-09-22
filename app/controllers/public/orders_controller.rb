@@ -7,7 +7,7 @@ class Public::OrdersController < ApplicationController
   end
 
   def index
-    @orders = current_customer.orders
+    @order = Order.all
   end
 
   def show
@@ -35,7 +35,6 @@ class Public::OrdersController < ApplicationController
   end
 
   def confirm
-
       @delivery_fee = 800
       @order = Order.new(order_params)
     if params[:order][:address_number] == "1"
@@ -62,7 +61,6 @@ class Public::OrdersController < ApplicationController
     end
     @cart_items = current_customer.cart_items.all
     @total = @cart_items.inject(0) { |sum, item| sum + item.sum_price }
-
   end
 
   def thanks
@@ -73,7 +71,6 @@ class Public::OrdersController < ApplicationController
     def order_params
       params.require(:order).permit(:name,:postal_code,:address,:total_price,:delivery_fee,:status,:item_id,:payment_method,:customer_id)
     end
-
 
 end
 
