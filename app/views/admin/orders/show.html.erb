@@ -1,0 +1,4 @@
+<%= form_with model:@order, url:admin_order_path, local: true do |f| %>
+    <%= f.select :status, options_for_select(@order.status.to_a, selected: order.status_before_type_cast) %>
+    <%= f.submit "更新", class:'btn btn-info' %>
+  <% end %>
