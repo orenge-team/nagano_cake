@@ -7,7 +7,7 @@ class Public::OrdersController < ApplicationController
   end
 
   def index
-    @order = Order.all
+    @orders = Order.all
   end
 
   def show
