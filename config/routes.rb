@@ -33,13 +33,15 @@ Rails.application.routes.draw do
        delete 'destroy_all'
      end
     end
+
    get 'orders/confirm' => 'orders#confirm'
+
    post 'orders/confirm' => 'orders#confirm'
    get 'orders/thanks' => 'orders#thanks'
    resources :orders, only: [:new, :create, :index, :show]
 
 
- end
+   end
 
   namespace :admin do
     get '/' => 'homes#top'
