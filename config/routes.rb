@@ -50,6 +50,7 @@ Rails.application.routes.draw do
     resources :items, except: [:destroy]
     resources :customers, only:[:index, :show, :edit, :update]
     resources :orders, only:[:show, :update, :index]
+    resources :order_items, only:[:update]
 
   end
  end

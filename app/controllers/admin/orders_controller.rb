@@ -3,6 +3,8 @@ class Admin::OrdersController < ApplicationController
   def show
     @order = Order.find(params[:id])
     @order_items = @order.order_items
+    @total = @order_items.inject(0) { |sum, order_item| sum + order_item.sum_price }
+    @delivery_fee = 800
   end
 
   def update
@@ -14,9 +16,9 @@ class Admin::OrdersController < ApplicationController
   def index
     @orders = Order.all
   end
-  
+
   private
-  
+
  def order_params
     params.require(:order).permit(:status)
  end
