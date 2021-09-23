@@ -33,9 +33,12 @@
             <%= f.submit "ログイン", class: "btn btn-sm btn-success text-white" %>
           </div>
         <% end %>
+        <div>
+          <h5>会員登録がお済みでない方</h5><br>
+          <%= link_to "こちら",new_customer_registration_path %>から新規登録を行ってください
+        </div>
       </div>
     </div>
   </div>
 </div>
 
-<%= render "customers/shared/links" %>

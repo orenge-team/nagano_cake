@@ -3,71 +3,88 @@
   <div class="row">
     <div class="col">
       <table>
-          <tr>
-            <td><strong>購入者</strong></td>
-            <td>
+        <tr>
+          <th>購入者</th>
+          <td>
             <%= link_to admin_customer_path(@order.customer) do %>
-              <div class="text-dark"><%= @order.name %></div>
+              <div class="text-dark mb-2"><%= @order.name %></div>
             <% end %>
-            </td>
-          </tr>
-          <tr>
-            <td><strong>注文日</strong></td>
-        　　<td><%= @order.created_at.strftime('%Y/%m/%d') %></td>
-          </tr>
-          <tr>
-            <td><strong>配送先</strong></td>
-            <td>〒<%= @order.postal_code %><%= @order.address %></td>
-            <td><%= @order.name %></td>
-          </tr>
-          <tr>
-            <td><strong>支払い方法</strong></td>
-        　　<td><%= @order.payment_method %></td>
-          </tr>
-          <tr>
-            <td><strong>注文ステータス</strong></td>
-            <td>
-              <%= form_with model:@order, url:admin_order_path, local: true do |f| %>
-               <%= f.select :status,Order.statuses.keys %>
-               <%= f.submit "更新", class:'btn btn-info' %>
-              <% end %>
-            </td>
-          </tr>
+          </td>
+        </tr>
+        <tr>
+          <th>注文日</th>
+        　<td><%= @order.created_at.strftime('%Y/%m/%d') %></td>
+        </tr>
+        <tr>
+          <th>配送先</th>
+          <td>〒<%= @order.postal_code %><%= @order.address %></td>
+          <td><%= @order.name %></td>
+        </tr>
+        <tr>
+          <th>支払い方法</th>
+        　<td><%= @order.payment_method %></td>
+        </tr>
+        <tr>
+          <th>注文ステータス</th>
+          <td>
+            <%= form_with model:@order, url:admin_order_path, local: true do |f| %>
+              <%= f.select :status,Order.statuses.keys %>
+              <%= f.submit "更新", class:'btn btn-success ml-3' %>
+            <% end %>
+          </td>
+        </tr>
       </table>
     </div>
   </div>
-      <div class=" row">
-        <div class="col">
-          <table class="table table-hover table-sm m-4">
-              <thead class="thead-light">
-                <tr>
-                  <th>商品名</th>
-                  <th>単価</th>
-                  <th>数量</th>
-                  <th>小計</th>
-                  <th>制作ステータス</th>
-                </tr>
-              </thead>
-              <tbody>
-                <% @order_items.each do |order_item| %>
-                  <tr>
-                    <td><%= order_item.item.name %></td>
-                    <td><%= order_item.price %></td>
-                    <td><%= order_item.count %></td>
-                    <td><%= (order_item.item.price*order_item.count).to_s(:delimited) %></td>
-                    <td>
-                    <!--<#%= form_with model:@order_items, url:admin_order_path, local: true do |f| %>-->
-                    <!-- <#%= f.select :making_status ,Order_items.making_status.keys %>-->
-                    <!-- <#%= f.submit "更新", class:'btn btn-info' %>-->
-                    <!--<3% end %>-->
-                    </td>
-                  </tr>
+  <div class=" row">
+    <div class="col-8">
+      <table class="table mt-5">
+        <thead class="thead-light">
+          <tr>
+            <th>商品名</th>
+            <th>単価(税込)</th>
+            <th>数量</th>
+            <th>小計</th>
+            <th>制作ステータス</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @order_items.each do |order_item| %>
+            <tr>
+              <td><%= order_item.item.name %></td>
+              <td><%= order_item.add_tax_price.to_s(:delimited) %></td>
+              <td><%= order_item.count %></td>
+              <td><%= (order_item.add_tax_price*order_item.count).to_s(:delimited) %></td>
+              <td>
+                <%= form_with model: order_item, url: admin_order_item_path, method: :patch, local: true do |f| %>
+                  <%= f.select :making_status, OrderItem.making_statuses.keys %>
+                  <%= f.submit "更新", class:'btn btn-success ml-3' %>
                 <% end %>
-              </tbody>
-          </table>
-        </div>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-4">
+      <table class="mt-5">
+        <tr>
+          <th>商品合計</th>
+          <td><%= @total.round.to_s(:delimited) %></td>
+        </tr>
+        <tr>
+          <th>送料</th>
+          <td><%= @delivery_fee.to_s %>円</td>
+        </tr>
+        <tr>
+          <th>請求金額合計</th>
+          <td><strong><%= @delivery_fee+@total %>円</strong></td>
+        </tr>
+      </table>
     </div>
   </div>
+</div>
+
 
 
 

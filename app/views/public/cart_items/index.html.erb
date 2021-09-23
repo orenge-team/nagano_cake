@@ -1,6 +1,6 @@
 <h1>ショッピングカート</h1>
 
-<div class='container px-5 px-sm-0'>
+<div class='container'>
   <div class='row'>
         <table class = "table table-hover table-inverse" >
         <div><%= link_to "カート内を空にする",destroy_all_cart_items_path, class: 'btn btn-danger',  method: :delete%></div>
@@ -30,7 +30,7 @@
           </tbody>
         </table>
     </div>
-    <div class='row'>
+    <div class='row mb-5 pb-5'>
       <div class='col'>
         <%= link_to "買い物を続ける",items_path, class: 'btn btn-primary' %>
       </div>
@@ -39,6 +39,5 @@
           <%= f.submit "情報入力に進む" %>
         <% end %>
       </div>
-    </div>
   </div>
 </div>
