@@ -2,7 +2,9 @@
   <div class="row mt-4">
     <h3>管理者ログイン</h3>
     <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0">
+      
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    
       <div class="form-group row mt-5">
         <div class="col-4"><%= f.label :メールアドレス %></div>
         <div class="col-8"><%= f.email_field :email, autofocus: true, autocomplete: "email" ,:placeholder =>"sample@example.com" %>
