@@ -13,8 +13,13 @@ class Admin::OrdersController < ApplicationController
     redirect_to admin_order_path(@order)
   end
 
+
+ 
+  
+
   def index
   end
+
 
   private
 
