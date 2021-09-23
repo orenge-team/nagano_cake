@@ -53,6 +53,7 @@ class Public::OrdersController < ApplicationController
       end
     elsif params[:order][:address_number] == "3"
       address_new = current_customer.addresses.new(address_params)
+      @order.delivery_fee = 800
     if address_new.save
     else
       render :new
@@ -76,7 +77,7 @@ class Public::OrdersController < ApplicationController
 
 
     def address_params
-      params.require(:order).permit(:name, :address,:total_price)
+      params.require(:order).permit(:name, :address,:postal_code )
     end
 end
 
