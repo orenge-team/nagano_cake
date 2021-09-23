@@ -62,11 +62,3 @@
     </div>
   </div>
 
-
-　　　　　　<% if customer_signed_in? %>
-              <p><%= link_to "ログアウト", destroy_customer_session_path, method: :delete %></p>
-            <% else %>
-              <p><%= link_to "新規登録", new_customer_registration_path %></p>
-              <p><%= link_to "ログイン", new_customer_session_path %></p>
-            <% end %>
-             <%= yield %>
