@@ -17,7 +17,7 @@
           <div class="text-center">
               <tr>
                   <td><%= link_to "退会しない", customers_path, class: "btn btn-success" %></td>
-                  <td><%= link_to "退会", customers_withdraw_path,method: :patch, class: "btn btn-danger" %></td>
+                  <td><%= link_to "退会", customers_withdraw_path,method: :patch,"data-confirm" => "本当に退会しますか？", class: "btn btn-danger" %></td>
               </tr>
           </div>
         </div>
