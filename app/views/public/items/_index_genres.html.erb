@@ -1,0 +1,11 @@
+<tbody>
+    <% genres.each do |genre| %>
+    <tr>
+      <% if genre.is_active == true %>　
+      <td>
+        <%= link_to genre.name, genre_path(genre_id: genre.id), class: "text-secondary" %>
+      </td> 
+      <% end %>
+    </tr>
+    <% end %>
+</tbody>
