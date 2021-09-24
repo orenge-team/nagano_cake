@@ -3,7 +3,6 @@ class Admin::OrdersController < ApplicationController
   def show
     @order = Order.find(params[:id])
     @order_items = @order.order_items
-    @order_items_all = @order.order_items.making_statuses.all
     @total = @order_items.inject(0) { |sum, order_item| sum + order_item.sum_price }
     @delivery_fee = 800
   end
