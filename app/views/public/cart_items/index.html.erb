@@ -32,7 +32,7 @@
     </div>
     <div class='row mb-5 pb-5'>
       <div class='col'>
-        <%= link_to "買い物を続ける",items_path, class: 'btn btn-primary' %>
+        <%= link_to "買い物を続ける",root_path, class: 'btn btn-primary' %>
       </div>
       <div class='col'>
         <%= form_with model:@order,url:new_order_path,method: :get,local: true do |f| %>
