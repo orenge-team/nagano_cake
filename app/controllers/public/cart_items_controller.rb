@@ -3,6 +3,7 @@ class Public::CartItemsController < ApplicationController
   def index
     @cart_items = CartItem.where(customer_id: current_customer.id)
     @order = Order.new
+    @customer = current_customer
   end
 
   def create
