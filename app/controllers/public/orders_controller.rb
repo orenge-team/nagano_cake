@@ -7,10 +7,12 @@ class Public::OrdersController < ApplicationController
   end
 
   def index
+    @customer = current_customer
     @orders = Order.all
   end
 
   def show
+    @customer = current_customer
     @order = Order.find(params[:id])
   end
 
@@ -35,6 +37,7 @@ class Public::OrdersController < ApplicationController
   end
 
   def confirm
+      @customer = current_customer
       @delivery_fee = 800
       @order = Order.new(order_params)
     if params[:order][:address_number] == "1"
@@ -66,6 +69,7 @@ class Public::OrdersController < ApplicationController
   end
 
   def thanks
+    @customer = current_customer
   end
 
   private
