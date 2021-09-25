@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row m-5">
-    
+
     <% items.each do |item| %>
     <div class="col-lg-3, m-3">
        <%= link_to item_path(item.id) do %>
@@ -8,11 +8,11 @@
        <%= item.name %><br>
        <% end %>
      ¥<%= item.add_tax_price.to_s(:delimited) %><br>
-   
+
     </div>
      <% end %>
   </div>
-  
-   
+
+
 </div>
 
