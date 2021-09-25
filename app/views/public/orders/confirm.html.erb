@@ -3,7 +3,7 @@
 
 <div class='container px-5 px-sm-0'>
     <div class='row'>
-      <div class="col-md-8">
+      <div class="col-md-8 offset-md-1">
         <table class = "table table-hover table-inverse table-bordered" >
           <thead>
             <tr>
@@ -26,42 +26,42 @@
               <% end %>
           </tbody>
         </table>
-      </div>
-        <div class="col-md-3">
-          <table class="table table-bordered form-horizontal">
+
+        <table class="table table-hover table-inverse">
+          <thread>
+            <tr>
+              <th></th>
+              <th></th>
+            </tr>
+          </thread>
           <tbody>
-            <div class="form-group">
-            送料 ¥<%= @delivery_fee.to_s %>
-            </div>
-            <div class="form-group">
-            商品合計 ¥<%= @total.round.to_s(:delimited) %>
-            </div>
-            <div class="form-group">
-            請求金額 ¥<%= @delivery_fee+@total %>
-            </div>
+            <tr>
+              <td>送料</td>
+              <td>¥<%= @delivery_fee.to_s %></td>
+            </tr>
+            <tr>
+              <td>商品合計</td>
+              <td>¥<%= @total.round.to_s(:delimited) %></td>
+            </tr>
+            <tr>
+              <td>請求金額</td>
+              <td>¥<%= @delivery_fee+@total %></td>
+            </tr>
+            <tr>
+              <td>支払方法</td>
+              <td><%= @order.payment_method %></td>
+            </tr>
+            <tr>
+              <td>お届け先</td>
+              <td>〒<%= @order.postal_code %>
+                    <%= @order.address %>
+                    <%= @order.name %>
+              </td>
+            </tr>
+
           </tbody>
-          </table>
-        </div>
-    </div>
-    <div class='row'>
-      <div class='col'>
-        <h4>支払い方法</h4>
-      </div>
-      <div class='col'>
-        <%= @order.payment_method %>
-      </div>
-    </div>
-    <div class='row'>
-      <div class='col'>
-        <h4>お届け先</h4>
-      </div>
-      <div class='col'>
-        <%= @order.postal_code %>
-        <%= @order.address %><br>
-        <%= @order.name %>
-      </div>
-    </div>
-    <div class='row mb-5 pb-5'>
+        </table>
+    <div>
       <%= form_with model: @order, url: orders_path, local: true do |f| %>
         <%= f.hidden_field :name %>
         <%= f.hidden_field :address %>
@@ -72,4 +72,5 @@
         <%= f.submit "注文を確定する" %>
       <% end %>
     </div>
+</div>
 </div>
