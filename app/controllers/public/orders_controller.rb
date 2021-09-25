@@ -7,12 +7,10 @@ class Public::OrdersController < ApplicationController
   end
 
   def index
-    @customer = current_customer
     @orders = Order.all
   end
 
   def show
-    @customer = current_customer
     @order = Order.find(params[:id])
   end
 
@@ -37,7 +35,6 @@ class Public::OrdersController < ApplicationController
   end
 
   def confirm
-      @customer = current_customer
       @delivery_fee = 800
       @order = Order.new(order_params)
     if params[:order][:address_number] == "1"
@@ -50,13 +47,11 @@ class Public::OrdersController < ApplicationController
         @order.name = Address.find(params[:order][:registered]).name
         @order.address = Address.find(params[:order][:registered]).address
         @order.postal_code = Address.find(params[:order][:registered]).postal_code
-        @order.delivery_fee = 800
       else
         render :new
       end
     elsif params[:order][:address_number] == "3"
       address_new = current_customer.addresses.new(address_params)
-      @order.delivery_fee = 800
     if address_new.save
     else
       render :new
@@ -69,7 +64,6 @@ class Public::OrdersController < ApplicationController
   end
 
   def thanks
-    @customer = current_customer
   end
 
   private
@@ -77,11 +71,11 @@ class Public::OrdersController < ApplicationController
     def order_params
       params.require(:order).permit(:name,:postal_code,:address,:total_price,:delivery_fee,:status,:item_id,:payment_method,:customer_id )
     end
-
-
+    
+    
 
     def address_params
-      params.require(:order).permit(:name, :address,:postal_code )
+      params.require(:order).permit(:name, :address,:total_price)
     end
 end
 
