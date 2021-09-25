@@ -33,17 +33,18 @@
 }
 
 
-html, body { height: 100%; }
+html, body {
+    height: 100%; }
 
 body {
-    background-image: url('/assets/wood.jpeg');
     backdrop-filter: blur(3px);
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
     position: relative;
     // #f2efed
-    padding-bottom: 60px; 
+    padding-bottom: 60px;
+
 }
 
 
