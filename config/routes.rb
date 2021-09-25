@@ -7,6 +7,8 @@ Rails.application.routes.draw do
     get "customers/unsubscribe" => "customers#unsubscribe"
     patch "customers/withdraw" => "customers#withdraw"
     get "search" => "searches#search"
+
+
     resource :customers, only: [:show, :edit, :update]
     resources :items, only: [:index, :show]
    end

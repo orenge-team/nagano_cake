@@ -1,0 +1,2 @@
+module Publick::SearchesHelper
+end
