@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     get "search" => "searches#search"
 
 
+
     resource :customers, only: [:show, :edit, :update]
     resources :items, only: [:index, :show]
    end
