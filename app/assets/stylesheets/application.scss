@@ -33,14 +33,15 @@
 }
 
 
-// body {
-//     background-image: url('/assets/wood.jpeg');
-//     background-size: cover;
-//     background-attachment: fixed;
-//     background-position: center;
-//     position: relative;
-//     // #f2efed
-// }
+body {
+    background-image: url('/assets/wood.jpeg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    position: relative;
+    // #f2efed
+    padding-bottom: 60px; 
+}
 
 
 
@@ -184,5 +185,6 @@ header, footer {
 .tab-content.transparent {
     background-color: transparent;
 }
+
 
 /*End Wizard*/
