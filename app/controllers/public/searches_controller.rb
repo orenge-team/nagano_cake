@@ -6,7 +6,7 @@ class Public::SearchesController < ApplicationController
     if @range == "Item"
       @items = Item.looks(params[:search], params[:word])
     else
-          
+
     end
    end
 end

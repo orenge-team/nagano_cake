@@ -1,4 +1,4 @@
-<%= render"public/items/genre_search" %>
+<%= render"public/items/genre_search", genre: @genre %>
  <!--<div class="container">-->
  <!-- <div class="row">-->
  <!--  <div class="col-md-8 offset-md-1">-->
@@ -17,6 +17,7 @@
     <%= render"public/items/index", items: @items %>
 
   <div class="mx-auto" style="width: 100px;" "mb-5, pb-5">
+      
       <%= paginate @items %>
   </div>
 </div>

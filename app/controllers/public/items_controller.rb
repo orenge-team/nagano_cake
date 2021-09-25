@@ -1,12 +1,12 @@
 class  Public::ItemsController < ApplicationController
   def index
+    @item_counts = Item.all
     @items = Item.page(params[:page]).per(8).order(:id)
     @customer = current_customer
-    # @item =Item.all
     @genres = Genre.all
      if params[:genre_id].present?
        @genre = Genre.find(params[:genre_id])
-       @items = @genre.items
+       @item_counts = @genre.items
      end
   end
 
