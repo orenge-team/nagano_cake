@@ -1,19 +1,26 @@
 <div class='container'>
   <div class='row mt-5'>
+    <div class="col-lg-4">ジャンル検索</div>
+    <!--<=link_to'ケーキ', %>-->
       <div class="col-md-5" offset-md-1>
         <h2>ようこそ、ながのCAKEへ！</h2>
-            このサイトは、ケーキ販売のECサイトになります。<br>
-            会員でない方も商品の閲覧はできますが、<br>
-            購入には会員登録が必要になります。<br>
+        このサイトは、ケーキ販売のECサイトになります。<br>
+        会員でない方も商品の閲覧はできますが、<br>
+        購入には会員登録が必要になります。<br>
       </div>
-      <div class="col-md-5" offset-md-1>
-           <%= image_tag 'img_strawberry_cake.jpeg',size: '350x250' ,alt: "いちごのホールケーキ"%>
+      <div class="col-md-3" offset-md-1>
       </div>
-  　</div>
+    </div>
   </div>
-  <h3><span style="margin-left:120px">新着商品</span></h3>
-  <%= render"public/items/index", items: @items  %>
-  
+  <div class='row mt-3'>
+    <div class="col-lg-4"></div>
+    <h3>新着商品</h3>
+  </div>
+  <div class='row mt-3'>
+    <div class="col-md-4"></div>
+      <%= render"public/items/index", items: @items  %>
+    </div>
+  </div>
   <div class="float-lg-right , mb-5, pb-5"><%= link_to '全ての商品を見る >', items_path %></div>
 </div>
 

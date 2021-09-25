@@ -17,6 +17,46 @@
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
 
+@font-face {
+    font-family: 'Senobi-Gothic-Medium';
+    src: font-url('/assets/Senobi-Gothic-Medium.ttf');
+}
+
+@font-face {
+    font-family: 'ume-tgs5';
+    src: font-url('/assets/ume-tgs5.ttf');
+}
+
+@font-face {
+    font-family: 'Honoka-Shin-Antique-Kaku_M';
+    src: font-url('/assets/Honoka-Shin-Antique-Kaku_M.otf');
+}
+
+
+body {
+    background-image: url('/assets/wood.jpeg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    position: relative;
+    // #f2efed
+}
+
+
+
+header, footer {
+     background: #f58433;
+     opacity: 0.9;
+}
+
+.navbar-brand {
+    font-family: 'Senobi-Gothic-Medium';
+    font-size: 40px;
+}
+
+.navbar-nav, .main_container {
+    font-family: 'Honoka-Shin-Antique-Kaku_M';
+}
 
 /*Start Wizard*/
 
