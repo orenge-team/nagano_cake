@@ -1,6 +1,48 @@
 <h1>ショッピングカート</h1>
 
 <div class='container'>
+   <div class='row'>
+  <div class='col-md-7'>
+
+
+  </div>
+  <div class='col-md-11 offset-md-1'>
+    <div class="mb-3">
+
+    <div role="content">
+      <div class="widget-body">
+        <div class="row">
+          <form id="wizard-1" novalidate="novalidate">
+            <div id="bootstrap-wizard-1" class="col-sm-12">
+              <div class="form-bootstrapWizard">
+                <ul class="bootstrapWizard form-wizard">
+                  <li class="active" data-target="#step1"><span class="step">1</span> <span class="title">買い物かごに入れる</span></li>
+                  <li data-target="#step2" class=""> <span class="step">2</span> <span class="title">注文情報入力</span></li>
+                  <li data-target="#step3" class="">  <span class="step">3</span> <span class="title">注文内容を確認</span></li>
+                  <li data-target="#step3" class=""> <span class="step">4</span> <span class="title">完了</span></li>
+                </ul>
+                <div class="clearfix"></div>
+              </div>
+              <div class="tab-content">
+                <div class="tab-pane" id="tab1"> <br>
+                  <h3><strong>買い物かごに入れる</strong> </h3>
+                </div>
+                <div class="tab-pane" id="tab2"> <br>
+                  <h3><strong>注文情報入力</strong> </h3>
+                </div>
+                <div class="tab-pane" id="tab3"> <br>
+                  <h3><strong>注文内容を確認</strong> </h3>
+                </div>
+                <div class="tab-pane" id="tab4"> <br>
+                  <h3><strong>完了</strong> </h3>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
   <div class='row'>
         <table class = "table table-hover table-inverse" >
         <div><%= link_to "カート内を空にする",destroy_all_cart_items_path, class: 'btn btn-danger',  method: :delete%></div>
