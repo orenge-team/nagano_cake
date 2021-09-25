@@ -1,0 +1,13 @@
+
+    <% @genres.each do |genre| %>
+
+        <table>
+         <tbody>
+           <tr>
+            <td>
+              <%= link_to genre.name, items_path(genre_id: genre.id), class: "text-secondary" %>
+            </td>
+           </tr>
+         </tbody>
+        </table>
+    <% end %>
