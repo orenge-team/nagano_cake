@@ -34,14 +34,19 @@
 
 
 body {
-    background-image: url('/assets/img_cheese_cake.jpeg') ;
-    background-size: contain;
-    opacity: 0.9;
+    background-image: url('/assets/wood.jpeg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    position: relative;
     // #f2efed
 }
 
+
+
 header, footer {
      background: #f58433;
+     opacity: 0.9;
 }
 
 .navbar-brand {
@@ -51,10 +56,6 @@ header, footer {
 
 .navbar-nav, .main_container {
     font-family: 'Honoka-Shin-Antique-Kaku_M';
-}
-
-.btn {
-    opacity: 0.9
 }
 
 

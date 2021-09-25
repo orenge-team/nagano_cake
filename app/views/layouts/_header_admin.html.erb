@@ -1,5 +1,5 @@
 <header>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light p-3">
+  <nav class="navbar navbar-expand-lg navbar-light p-3">
     <div class="container">
       <a class="navbar-brand" href="/"><span>ながのCAKE</span></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -8,11 +8,11 @@
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav ml-auto">
           <% if admin_signed_in? %>
-            <li><%= link_to '商品一覧', admin_items_path, class: "btn btn-light mr-3" %></li>
-            <li><%= link_to '会員一覧', admin_customers_path, class: "btn btn-light mr-3" %></li>
-            <li><%= link_to '注文履歴一覧', admin_path, class: "btn btn-default mr-3" %></li>
-            <li><%= link_to 'ジャンル一覧', admin_genres_path, class: "btn btn-light mr-3" %></li>
-            <li><%= link_to 'ログアウト', destroy_admin_session_path, method: :delete, class: "btn btn-light" %></li>
+            <li><%= link_to '商品一覧', admin_items_path, class: "fas fa-birthday-cake btn" %></li>
+            <li><%= link_to '会員一覧', admin_customers_path, class: "fas fa-users btn" %></li>
+            <li><%= link_to '注文履歴一覧', admin_path, class: "fas fa-tags btn" %></li>
+            <li><%= link_to 'ジャンル一覧', admin_genres_path, class: "fas fa-bookmark btn" %></li>
+            <li><%= link_to 'ログアウト', destroy_admin_session_path, method: :delete, class: "fas fa-sign-out-alt btn" %></li>
           <% else %>
             <li><%= link_to 'About', about_path, class: "btn btn-light mr-3" %></li>
             <li><%= link_to '商品一覧' , items_path, class: "btn btn-light mr-3" %></li>

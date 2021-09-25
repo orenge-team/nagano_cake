@@ -17,9 +17,8 @@
       <%= render 'layouts/header' %>
     <% end %>
     <main>
-      <div class="main_container"><%= yield %></div>
+      <%= yield %>
     </main>
+     <%= render 'layouts/footer' %>
   </body>
-      <%= render 'layouts/footer' %>
-
 </html>

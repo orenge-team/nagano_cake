@@ -1,51 +1,42 @@
 <div class="container">
-  <div class="row mt-3">
-    <div class="col-md-8 offset-md-1">
+  <div class="row mt-4 mx-auto">
+    <div class="col-2 mr-3">
       <h3>マイページ</h3>
-      <thead>
-        <table class="table1">
-          <tr>
-            <th></th>
-            <th>登録情報</th>
-            <th></th>
-            <th><%= link_to "編集する", edit_customers_path, class: "btn btn-sm btn-success text-white"  %></th>
-          </tr>
-        </table>
-      </thead>
-
-      <table class="table table-bordered" >
+    </div>
+    <div class="col-8 pt-3 pb-3 bg-light">
+      <h5><strong>登録情報</strong></h5>
+      <table class="table">
         <tbody>
           <tr>
-            <td>氏名</td>
+            <th>氏名</th>
             <td><%= @customer.first_name %><%= @customer.last_name %></td>
           </tr>
           <tr>
-            <td>カナ</td>
+            <th>カナ</th>
             <td><%= @customer.first_name_kana %><%= @customer.last_name_kana %></td>
           </tr>
           <tr>
-            <td>郵便番号</td>
+            <th>郵便番号</th>
             <td><%= @customer.postal_code %></td>
           </tr>
           <tr>
-            <td>住所</td>
+            <th>住所</th>
             <td><%= @customer.address %></td>
           </tr>
           <tr>
-            <td>電話番号</td>
+            <th>電話番号</th>
             <td><%= @customer.phone_number %></td>
           </tr>
           <tr>
-            <td>メールアドレス</td>
+            <th>メールアドレス</th>
             <td><%= @customer.email %></td>
           </tr>
         </tbody>
       </table>
-        
-            <%= link_to "配送先一覧", addresses_path, class: "btn btn-sm btn-success text-white"  %>
-            <%= link_to "注文履歴一覧", orders_path, class: "btn btn-sm btn-success text-white"  %>
-          
-      </div>
+      <%= link_to "配送先一覧", addresses_path, class: "fas fa-truck btn btn-outline-dark mr-2" %>
+      <%= link_to "注文履歴一覧", orders_path, class: "fas fa-tags btn btn-outline-dark" %>
+      <%= link_to "編集する", edit_customers_path, class: "fas fa-pencil-alt btn btn-outline-dark float-right" %>
     </div>
   </div>
+</div>
 
