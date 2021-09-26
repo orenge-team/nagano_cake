@@ -1,14 +1,15 @@
-<div class="sweets deck">
-<div class='container'>
-<div class='row mt-4'>
-  <div class='row mt-4'>
+
+<div class='container offset-md-2'>
+  <div class='row mt-3'>
+
+<%= render"public/items/genre_search", genre: @genre %>
+
     <h3><span style="margin-left:50px">商品一覧（全<%= @items.count %>件）</span></h3>
   </div>
     <%= render"public/items/index", items: @items %>
-    
+
   <div class="mx-auto" style="width: 100px;" "mb-5, pb-5">
+      
       <%= paginate @items %>
   </div>
-</div>
-</div>
 </div>
