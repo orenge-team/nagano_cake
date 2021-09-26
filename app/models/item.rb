@@ -4,10 +4,17 @@ class Item < ApplicationRecord
   has_many :cart_items, dependent: :destroy
   attachment :image
 
+  validates :name, presence: true
+  validates :price, presence: true
+  validates :genre_id, presence: true
+
+
+
+
   enum is_active: { "販売休止中": false , "販売中": true }
 
   def add_tax_price
-    (self.price * 1.10).round
+    (self.price.to_i * 1.10).round
   end
 
    def self.looks(search, word)
