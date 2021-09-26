@@ -1,6 +1,6 @@
 <section id="top">
 <div class='container'>
-  <div class='row'>
+  <div class='row mt-4'>
     <div class="col-lg-2">
       <%= render"public/items/genre_search", genre: @genre %>
     </div>
@@ -15,10 +15,11 @@
     <!--<div class="col-12 mb-5 pb-5">-->
       <h4>新着商品</h4>
       <%= render"public/items/index", items: @items %>
-    </div>
+      
       <div align="right">
         <%= link_to '全ての商品を見る>>', items_path %>
       </div>
+    </div>
   </div>
 </div>
 
