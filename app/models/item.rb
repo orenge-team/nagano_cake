@@ -10,4 +10,18 @@ class Item < ApplicationRecord
     (self.price * 1.10).round
   end
 
+   def self.looks(search, word)
+    if search == "perfect_match"
+      @item = Item.where("name LIKE?", "#{word}")
+    elsif search == "forward_match"
+      @item = Item.where("name LIKE?","#{word}%")
+    elsif search == "backward_match"
+      @item = Item.where("name LIKE?","%#{word}")
+    elsif search == "partial_match"
+      @item = Item.where("name LIKE?","%#{word}%")
+    else
+      @user = Item.all
+    end
+   end
+
 end

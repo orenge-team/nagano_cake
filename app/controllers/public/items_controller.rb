@@ -1,7 +1,14 @@
 class  Public::ItemsController < ApplicationController
   def index
+
     @items = Item.page(params[:page]).per(8).order(:id)
+
     @customer = current_customer
+    @genres = Genre.all
+     if params[:genre_id].present?
+       @genre = Genre.find(params[:genre_id])
+       @items = @genre.items.page(params[:page]).per(6).order(:id)
+     end
   end
 
   def show
