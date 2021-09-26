@@ -8,6 +8,8 @@ Rails.application.routes.draw do
     patch "customers/withdraw" => "customers#withdraw"
     get "search" => "searches#search"
 
+
+
     resource :customers, only: [:show, :edit, :update]
     resources :items, only: [:index, :show]
    end

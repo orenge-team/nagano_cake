@@ -1,0 +1,2 @@
+module Puclic::SearchesHelper
+end
