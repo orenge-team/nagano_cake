@@ -5,9 +5,11 @@
        <%= attachment_image_tag item, :image, :fill, 200, 150, format: 'jpeg',fallback: "no-image-icon.jpg",size: '200x150'%><br>
        <%= item.name %><br>
        <% end %>
-       ¥<%= item.add_tax_price.to_s(:delimited) %><br>
-   
+     ¥<%= item.add_tax_price.to_s(:delimited) %><br>
+
     </div>
-    <% end %>
+     <% end %>
+  </div>
+
 </div>
 
