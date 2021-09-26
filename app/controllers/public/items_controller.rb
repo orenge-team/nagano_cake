@@ -7,7 +7,7 @@ class  Public::ItemsController < ApplicationController
     @genres = Genre.all
      if params[:genre_id].present?
        @genre = Genre.find(params[:genre_id])
-       @items = @genre.items.page(params[:page]).per(6).order(:id)
+       @items = @genre.items.page(params[:page]).per(8).order(:id)
      end
   end
 
