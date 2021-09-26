@@ -35,13 +35,13 @@ class Public::OrdersController < ApplicationController
   end
 
   def confirm
-      @delivery_fee = 800
       @order = Order.new(order_params)
+      @order.delivery_fee = 800
+      @delivery_fee = @order.delivery_fee
     if params[:order][:address_number] == "1"
       @order.name = current_customer.first_name+current_customer.last_name
       @order.address = current_customer.address
       @order.postal_code = current_customer.postal_code
-      @order.delivery_fee = 800
     elsif params[:order][:address_number] == "2"
       if Address.exists?(id: params[:order][:registered])
         @order.name = Address.find(params[:order][:registered]).name
