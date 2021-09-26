@@ -1,104 +1,74 @@
 <div class='container px-5 px-sm-0'>
-        <h2>注文履歴詳細</h2>
-  <div class='row'>
-    <div class='col-md-5 offset-md-1'>
+  <div class="mt-4 ml-5"><h2>注文履歴詳細</h2></div>
+   <div class='row mx-auto mt-4'>
+    <div class='col-md-3 offset-md-1 pt-3 pb-3 bg-light'>
       <table class="table-bordered">
         <tr>
           <th>注文情報</th>
           <th></th>
         </tr>
         <tr>
-          <td>
-            注文日
-          </td>
-          <td>
-            <%= @order.created_at.strftime('%Y/%m/%d') %>
-          </td>
+          <td>注文日</td>
+          <td><%= @order.created_at.strftime('%Y/%m/%d') %></td>
         </tr>
         <tr>
-          <td>
-            配送先
-          </td>
-          <td>
-            <%= @order.address %>
-          </td>
+          <td>配送先</td>
+          <td><%= @order.address %></td>
         </tr>
         <tr>
-          <td>
-            支払方法
-          </td>
-          <td>
-            <%= @order.payment_method %>
-          </td>
+          <td>支払方法</td>
+          <td><%= @order.payment_method %></td>
         </tr>
         <tr>
-          <td>
-            ステータス
-          </td>
-          <td>
-            <%= @order.status %>
-          </td>
+          <td>ステータス</td>
+          <td><%= @order.status %></td>
         </tr>
       </table>
     </div>
-    
-      <div class='col-md-5'>
-        <table class="table-bordered">
+    <div class='col-md-5 pt-3 pb-3 bg-light'>
+      <table class="table-bordered">
         <tr>
           <th>請求情報</th>
           <th></th>
         </tr>
         <tr>
-          <td>
-            商品合計
-          </td>
-          <td>
-        <%= @order.total_price %><br>
-          </td>
+          <td>商品合計</td>
+          <td><%= @order.total_price %></td>
         </tr>
         <tr>
-          <td>
-            配送料
-          </td>
-          <td>
-        <%= @order.delivery_fee %><br>
-          </td>
+          <td>配送料</td>
+          <td><%= @order.delivery_fee %></td>
         </tr>
         <tr>
-          <td>
-            ご請求額
-          </td>
-          <td>
-        <%= @order.total_price + @order.delivery_fee %>
-          </td>
+          <td>ご請求額</td>
+          <td><%= @order.total_price + @order.delivery_fee %></td>
         </tr>
-        </table>
+      </table>
     </div>
   </div>
-  
-    <div class='row'>
+  <div class='row mx-auto'>
+    <div class="col-md-8 offset-md-1 pt-3 pb-3 bg-light">
       <p>注文内容</p>
-      <table class = "table table-hover table-inverse" >
-          <thead>
+      <table class = "table table-hover table-sm" >
+        <thead>
+          <tr>
+            <th>商品</th>
+            <th>単価（税込）</th>
+            <th>個数</th>
+            <th>小計</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @order.order_items.each do |item| %>
             <tr>
-              <th>商品</th>
-              <th>単価（税込）</th>
-              <th>個数</th>
-              <th>小計</th>
+              <td><%= item.item.name %></td>
+              <td><%= item.item.add_tax_price %></td>
+              <td><%= item.count %></td>
+              <td><%= item.count * item.item.add_tax_price %></td>
             </tr>
-          </thead>
-          <tbody>
-            <% @order.order_items.each do |item| %>
-              <tr>
-                <td><%= item.item.name %></td>
-                <td><%= item.item.add_tax_price %></td>
-                <td><%= item.count %></td>
-                <td><%= item.count * item.item.add_tax_price %></td>
-              </tr>
-            <% end %>
-          </tbody>
-        </table>
-
+          <% end %>
+        </tbody>
+      </table>
     </div>
-
+  </div>
 </div>

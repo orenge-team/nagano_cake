@@ -5,22 +5,21 @@
 
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
-      <div class="form-group row mt-5">
-        <div class="col-4"><%= f.label :メールアドレス %></div>
-        <div class="col-8"><%= f.email_field :email, autofocus: true, autocomplete: "email" ,:placeholder =>"sample@example.com" ,size: "50x3"%>
-        </div>
-      </div>
+      <div class="form-inline form-group row mt-5">
+    <%= f.label :"メールアドレス", class: "col-4 control-label" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" , class:"col-sm-8 form-control", :placeholder =>"sample@example.com"%>
+    </div>
 
-      <div class="form-group row mt-3">
-        <div class="col-4"><%= f.label :パスワード %></div>
-        <div class="col-8"><%= f.password_field :password, autocomplete: "current-password" ,size: "50x3" %>
-        </div>
-      </div>
+    <div class="form-inline form-group row mt-3">
+    <%= f.label :"パスワード", class:"col-4 control-label" %>
+    <%= f.password_field :password, autocomplete: "current-password" , class:"col-8 form-control" %>
+    </div>
 
-      <div class="form-group row mt-3">
-        <div class="col-4"></div>
-        <div class="col-8"><%= f.submit "ログイン",:class => "btn btn-primary" %>
-      </div>
+
+    <div class="form-inline form-group row mt-3">
+    <%= f.label :" ", class:"col-3" %>
+    <%= f.submit "ログイン", class:"btn btn-primary col-2" %>
+    </div>
     <% end %>
     </div>
   </div>

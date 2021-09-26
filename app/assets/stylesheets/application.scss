@@ -33,18 +33,19 @@
 }
 
 
-html,body { height: 100%; }
 
-
+body { height: 100%; }
 
 body {
-    background-image: url('/assets/wood.jpeg');
+
+    background-image: url('/assets/wood-light.jpeg');
     backdrop-filter: blur(5px);
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
     position: relative;
     // #f2efed
+    padding-bottom: 60px;
 }
 
 
@@ -57,6 +58,7 @@ header, footer {
 .navbar-brand {
     font-family: 'Senobi-Gothic-Medium';
     font-size: 40px;
+    color: black;
 }
 
 .navbar-nav, .main_container {
@@ -197,4 +199,6 @@ header, footer {
     background-color: transparent;
 }
 
+
 /*End Wizard*/
+

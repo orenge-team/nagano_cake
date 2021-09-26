@@ -1,0 +1,28 @@
+
+<div class="container">
+  <div class="row">
+   <div class="col-md-8 offset-md-1">
+    <h2>商品一覧(検索)</h2>
+      <table>
+        <tr>
+         <div class="row">
+           <% if @range == "Item" %>
+
+            <% @items.each do |item| %>
+              <div class="col-md-3">
+                <%= link_to item_path(item.id) do %>
+                 <%= attachment_image_tag item, :image, :fill, 150, 100, format: 'jpeg',fallback: "no-image-icon.jpg",size: '150x100'%><br>
+                 <%= item.name %><br>
+                <% end %>
+                ¥<%= item.add_tax_price.to_s(:delimited) %>
+              </div>
+            <% end %>
+           <% end %>
+          </div>
+        </div>
+
+        </tr>
+      </table>
+   </div>
+  </div>
+ </div>
