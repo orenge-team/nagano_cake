@@ -1,4 +1,4 @@
-<h3><%=@customer.full_name %>さんの会員情報編集</h3>
+<h3><%=@customer.first_name %><%=@customer.last_name %>さんの会員情報編集</h3>
 <div class='container'>
   <div class='row md-4'>
     <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0">
@@ -16,7 +16,7 @@
           <%= f.text_field :last_name, class: "last_name col-md-5 form-control-static name"  %>
         </div>
       </div>
-      
+
 
       <div class="form-group row">
         <div class="col-4"><%= f.label :"カナ氏名" %></div>
