@@ -12,6 +12,7 @@
 
            <% if customer_signed_in? %>
 
+
             <p class = "m-2" >ようこそ<br>
             <%= current_customer.first_name %>さん！</p><br>
             <li><%= link_to 'マイページ', customers_path, class: "fas fa-user btn ml-6 mt-4" %></li>

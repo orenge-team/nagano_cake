@@ -1,24 +1,32 @@
-# README
+# Name ながのCAKE
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
 
-* Ruby version
+長野にあるケーキ屋のショッピングサイト
 
-* System dependencies
 
-* Configuration
 
-* Database creation
 
-* Database initialization
+# Features
 
-* How to run the test suite
+* 商品名による検索機能、ジャンル検索機能により利用者の利便性を高めた
+* 全体のレイアウトをシンプルで温もりのある見た目にし、商品写真が映えるように調整
 
-* Services (job queues, cache servers, search engines, etc.)
+# Requirement
 
-* Deployment instructions
 
-* ...
+* Rails 5.2.6
+
+# Usage
+
+https://github.com/orenge-team/nagano_cake
+
+# Author
+
+
+
+* 作成者
+あっさー、しかちゃん、すえちゃん、はっしー
+* 所属
+オレンジビーツ
+
