@@ -38,7 +38,6 @@
 
 
   <div class='col-md-11 offset-md-1'>
-<h1>注文情報確認画面</h1>
     <div class='row'>
       <div class="col-md-8 offset-md-1">
         <table class = "table table-hover table-inverse table-bordered" >
@@ -56,9 +55,9 @@
             <tr>
               <td><%= attachment_image_tag cart_items.item, :image, :fill, 50, 50, fallback: "no-image-icon.jpg" %></td>
               <td><%= cart_items.item.name %></td>
-              <td>¥<%= (cart_items.item.price).to_s(:delimited) %></td>
+              <td>¥<%= (cart_items.item.add_tax_price).to_s(:delimited) %></td>
               <td><%= cart_items.count %></td>
-              <td>¥<%= (cart_items.item.price*cart_items.count).to_s(:delimited) %></td>
+              <td>¥<%= (cart_items.item.add_tax_price*cart_items.count).to_s(:delimited) %></td>
             </tr>
               <% end %>
           </tbody>
