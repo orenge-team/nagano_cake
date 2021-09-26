@@ -31,7 +31,7 @@
                <div class="text-dark"><%= order.updated_at.strftime('%Y/%m/%d')%></div>
               <% end %>
             </td>
-            <td><%= order.customer.full_name %></td>
+            <td><%= order.customer.first_name %><%= order.customer.last_name %></td>
             <td><%= order.order_items.count %></td>
             <td><%= order.status %></td>
           </tr>
