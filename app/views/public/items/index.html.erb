@@ -1,22 +1,9 @@
 
+<div class='container offset-md-2'>
+  <div class='row mt-3'>
+
 <%= render"public/items/genre_search", genre: @genre %>
- <!--<div class="container">-->
- <!-- <div class="row">-->
- <!--  <div class="col-md-8 offset-md-1">-->
- <!--   <h2>商品一覧</h2>-->
- <!--     <table>-->
- <!--       <tr>-->
 
- <!--       </tr>-->
- <!--     </table>-->
- <!--  </div>-->
-
-
-<div class="sweets deck">
-
-<div class='container'>
-<div class='row mt-4'>
-  <div class='row mt-4'>
     <h3><span style="margin-left:50px">商品一覧（全<%= @items.count %>件）</span></h3>
   </div>
     <%= render"public/items/index", items: @items %>
@@ -25,6 +12,4 @@
       
       <%= paginate @items %>
   </div>
-</div>
-</div>
 </div>

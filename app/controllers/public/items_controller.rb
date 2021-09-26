@@ -1,7 +1,7 @@
 class  Public::ItemsController < ApplicationController
   def index
 
-    @items = Item.page(params[:page]).per(6).order(:id)
+    @items = Item.page(params[:page]).per(8).order(:id)
 
     @customer = current_customer
     @genres = Genre.all
