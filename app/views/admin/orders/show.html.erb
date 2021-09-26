@@ -32,7 +32,7 @@
           <% else %>
           <%= form_with model:@order, url:admin_order_path, local: true do |f| %>
             <%= f.select :status,Order.statuses.keys %>
-            <%= f.submit "更新", class:'btn btn-success ml-3' %>
+            <%= f.submit "更新", class:'btn btn-outline-dark ml-3' %>
           <% end %>
           <% end %>
           </td>
@@ -71,7 +71,7 @@
               <td>
                 <%= form_with model: order_item, url: admin_order_item_path(order_item), method: :patch, local: true do |f| %>
                   <%= f.select :making_status, OrderItem.making_statuses.keys %>
-                  <%= f.submit "更新", class:'btn btn-success ml-3' %>
+                  <%= f.submit "更新", class:'btn btn-outline-dark ml-3' %>
                 <% end %>
               </td>
             </tr>
