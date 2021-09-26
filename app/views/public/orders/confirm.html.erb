@@ -1,12 +1,8 @@
 
-<h1>注文情報確認画面</h1>
+
 
 <div class='container px-5 px-sm-0'>
-    </div>
-  <div class='col-md-11 offset-md-1'>
-    <div class="mb-3">
-
-    <div role="content">
+      <div role="content">
       <div class="widget-body">
         <div class="row">
           <form id="wizard-1" novalidate="novalidate">
@@ -15,7 +11,7 @@
                 <ul class="bootstrapWizard form-wizard">
                   <li data-target="#step1"><span class="step">1</span> <span class="title">買い物かごに入れる</span></li>
                   <li data-target="#step2" class=""> <span class="step">2</span> <span class="title">注文情報入力</span></li>
-                  <li class="active" data-target="#step3" class="">  <span class="step">3</span> <span class="title">注文内容を確認</span></li>
+                  <li class="active" data-target="#step3" class="">  <span class="fas fa-mug-hot fa-2x"></span> <span class="title">注文内容を確認</span></li>
                   <li data-target="#step3" class=""> <span class="step">4</span> <span class="title">完了</span></li>
                 </ul>
                 <div class="clearfix"></div>
@@ -40,7 +36,10 @@
       </div>
     </div>
 
-    <div class='row mb-5 pb-5'>
+
+  <div class='col-md-11 offset-md-1'>
+<h1>注文情報確認画面</h1>
+    <div class='row'>
       <div class="col-md-8 offset-md-1">
         <table class = "table table-hover table-inverse table-bordered" >
           <thead>
@@ -110,5 +109,7 @@
         <%= f.submit "注文を確定する" %>
       <% end %>
     </div>
+</div>
+</div>
 </div>
 </div>
