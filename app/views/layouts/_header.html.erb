@@ -11,6 +11,12 @@
           <li><%= render "public/searches/search", class: "ml-10" %></li>
 
            <% if customer_signed_in? %>
+
+
+
+            <p class = "m-2" >ようこそ<br>
+            <%= current_customer.first_name %>さん！</p><br>
+
             <li><%= link_to 'マイページ', customers_path, class: "fas fa-user btn ml-6 mt-4" %></li>
             <li><%= link_to '商品一覧', items_path, class: "fas fa-birthday-cake btn ml-6 mt-4" %></li>
             <li><%= link_to 'カート', cart_items_path, class: "fas fa-shopping-cart btn ml-6 mt-4" %></li>
