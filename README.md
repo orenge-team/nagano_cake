@@ -23,7 +23,7 @@ https://github.com/orenge-team/nagano_cake
 
 # Author
 
-作成情報を列挙する
+
 
 * 作成者
 あっさー、しかちゃん、すえちゃん、はっしー
