@@ -11,10 +11,12 @@ class Admin::ItemsController < ApplicationController
 
   def create
     item = Item.new(item_params)
-    @genre_id = item.genre_id
     if item.save
      redirect_to admin_item_path(item)
     else
+      @item = Item.new
+      @genres = Genre.all
+      # flash[:error] = "必須項目を入力して下さい"
       render :new
     end
   end
